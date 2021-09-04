@@ -2,6 +2,8 @@
 
 OS: Ubuntu 21.04
 
+Clone into home directory (`~` or `/home/$USER/`).
+
 ## Packages needed
 
 ### Add repositories
@@ -93,5 +95,23 @@ Remove all `i3xrocks-*` packages (easier using _synaptic_), except:
 * `i3xrocks-time`
 * `i3xrocks-volume`
 
-# Copy files
+# Symlink files
 
+## Neovim
+
+## Regolith
+
+## Wallpaper
+
+```shell
+sudo ln -s /home/$USER/dotfiles/wallpaper/leaves.jpg /usr/share/backgrounds/leaves.jpg
+```
+
+## Zathura
+
+## zsh
+
+```shell
+ln -s /home/$USER/dotfiles/zsh/.p10k.zsh /home/$USER/.p10k.zsh
+ln -s /home/$USER/dotfiles/zsh/.zshrc /home/$USER/.zshrc
+```
