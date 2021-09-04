@@ -1,24 +1,40 @@
-# Steps
+# My dotfiles
 
-1. Install git
+OS: Ubuntu 21.04
 
-```shell
-$ sudo apt install -y git
-```
+## Packages needed
 
-2. Install neovim
+### Add repositories
 
 ```shell
-sudo apt install -y neovim
+sudo add-apt-repository ppa:regolith-linux/release
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo add-apt-repository -u ppa:snwh/ppa
+sudo add-apt-repository ppa:font-manager/staging
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu hirsute-cran40/'
+sudo add-apt-repository universe
 ```
 
-3. Install nerd fonts
+### Install packages
 
 ```shell
-git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic
 ```
 
-4. Install Segoe UI font
+Install RStudio and, then:
+
+```R
+install.packages("devtools")
+rstudioapi::addTheme("https://raw.githubusercontent.com/lusignan/nord-rstudio/master/Nord.rstheme", apply=TRUE, force=TRUE)
+```
+
+### Fonts
+
+#### Segoe UI
 
 ```shell
 wget https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh
@@ -26,28 +42,56 @@ chmod +x install.sh
 ./install.sh
 ```
 
-4. Install `paper` icon theme
+#### Nerd fonts
 
 ```shell
-sudo add-apt-repository -u ppa:snwh/ppa
-sudo apt install -y paper-icon-theme
+cd ~/Downloads/ && git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git && cd nerd-fonts/ && ./install.sh
 ```
 
-5. Install google-dot cursor
+### Cursor
 
-```shell
-sudo apt install -y libx11-dev libxcursor-dev libpng-dev
-```
-Go to https://www.pling.com/p/1215613/, download and extract `*.tar.gz` file.
-Then,
+Go to https://www.pling.com/p/1215613/, download and extract `*.tar.gz` file. Then,
 
 ```shell
 sudo mv GoogleDot-* /usr/share/icons/
 ```
 
-6. Install font manager
+### oh-my-zsh
 
 ```shell
-sudo add-apt-repository ppa:font-manager/staging
-sudo apt install -y font-manager
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+### powerlevel10k
+
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+#### Auto-suggestions
+
+```shell
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+#### Syntax highlighting
+
+```shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+### i3xrocks
+
+Remove all `i3xrocks-*` packages (easier using _synaptic_), except:
+
+* `i3xrocks-battery`
+* `i3xrocks-key-indicator`
+* `i3xrocks-keyboard-layout`
+* `i3xrocks-media-player`
+* `i3xrocks-memory`
+* `i3xrocks-rotification`
+* `i3xrocks-time`
+* `i3xrocks-volume`
+
+# Copy files
+
