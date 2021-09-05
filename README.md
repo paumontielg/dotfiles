@@ -153,7 +153,7 @@ sudo ln -s /home/$USER/dotfiles/wallpaper/leaves.jpg /usr/share/backgrounds/leav
 
 ## Zathura
 
-## zsh
+## ZSH
 
 Make `zsh` the default shell modifying `/etc/passwd`.
 
