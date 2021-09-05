@@ -24,7 +24,7 @@ sudo add-apt-repository universe
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu texlive-full
 ```
 
 Install RStudio and, then:
@@ -152,6 +152,11 @@ sudo ln -s /home/$USER/dotfiles/wallpaper/leaves.jpg /usr/share/backgrounds/leav
 ```
 
 ## Zathura
+
+```shell
+mkdir /home/$USER/.config/zathura/
+ln -s /home/$USER/dotfiles/zathura/zathurarc /home/$USER/.config/zathura/zathurarc
+```
 
 ## ZSH
 
