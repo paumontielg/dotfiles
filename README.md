@@ -24,7 +24,7 @@ sudo add-apt-repository universe
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu texlive-full
 ```
 
 Install RStudio and, then:
@@ -101,6 +101,50 @@ Remove all `i3xrocks-*` packages (easier using _synaptic_), except:
 
 ## Regolith
 
+```shell
+sudo rm -rf /etc/regolith/i3/config /etc/regolith/i3xrocks/conf.d/* /etc/regolith/picom/config /etc/regolith/styles/i3xrocks /etc/regolith/styles/nord/theme /etc/regolith/styles/nord/typeface
+sudo ln -s /home/$USER/dotfiles/regolith/i3/config /etc/regolith/i3/config
+sudo ln -s /home/$USER/dotfiles/regolith/i3xrocks/* /etc/regolith/i3xrocks/conf.d/
+sudo ln -s /home/$USER/dotfiles/regolith/picom/config /etc/regolith/picom/config
+sudo ln -s /home/$USER/dotfiles/regolith/styles/i3xrocks /etc/regolith/styles/i3xrocks
+sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/theme /etc/regolith/styles/nord/theme
+sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/typeface /etc/regolith/styles/nord/typeface
+```
+
+```bash
+/etc/regolith/
+├── i3
+│   └── config -> /home/$USER/dotfiles/regolith/i3/config
+├── i3xrocks
+│   └── conf.d
+│       ├── 01_setup -> /home/$USER/dotfiles/regolith/i3xrocks/01_setup
+│       ├── 20_media-player -> /home/$USER/dotfiles/regolith/i3xrocks/20_media-player
+│       ├── 30_keyboard-layout -> /home/$USER/dotfiles/regolith/i3xrocks/30_keyboard-layout
+│       ├── 30_key-indicator -> /home/$USER/dotfiles/regolith/i3xrocks/30_key-indicator
+│       ├── 40_rofication -> /home/$USER/dotfiles/regolith/i3xrocks/40_rofication
+│       ├── 50_memory -> /home/$USER/dotfiles/regolith/i3xrocks/50_memory
+│       ├── 60_volume -> /home/$USER/dotfiles/regolith/i3xrocks/60_volume
+│       ├── 70_wifi -> /home/$USER/dotfiles/regolith/i3xrocks/70_wifi
+│       ├── 80_time -> /home/$USER/dotfiles/regolith/i3xrocks/80_time
+│       └── 90_battery -> /home/$USER/dotfiles/regolith/i3xrocks/90_battery
+├── picom
+│   └── config -> /home/$USER/dotfiles/regolith/picom/config
+├── styles
+│   ├── gnome
+│   ├── i3-wm
+│   ├── i3xrocks -> /home/$USER/dotfiles/regolith/styles/i3xrocks
+│   ├── nord
+│   │   ├── color
+│   │   ├── rofi.rasi
+│   │   ├── root
+│   │   ├── theme -> /home/$USER/dotfiles/regolith/styles/nord/theme
+│   │   └── typeface -> /home/$USER/dotfiles/regolith/styles/nord/typeface
+│   ├── rofi
+│   ├── root
+│   └── st-term
+└── version
+```
+
 ## Wallpaper
 
 ```shell
@@ -110,6 +154,8 @@ sudo ln -s /home/$USER/dotfiles/wallpaper/leaves.jpg /usr/share/backgrounds/leav
 ## Zathura
 
 ## zsh
+
+Make `zsh` the default shell modifying `/etc/passwd`.
 
 ```shell
 ln -s /home/$USER/dotfiles/zsh/.p10k.zsh /home/$USER/.p10k.zsh
