@@ -21,4 +21,5 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+alias audio="alsactl restore"
 alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add . && git commit -m 'Autoupdate' && git push && rm -rf ~/Downloads/my-website"
