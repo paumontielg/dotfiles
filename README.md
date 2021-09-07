@@ -21,12 +21,16 @@ sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu hirsut
 sudo add-apt-repository universe
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+  sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 ```
 
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https code texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https code signal-desktop texlive-full
 ```
 
 Install RStudio and, then:
