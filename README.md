@@ -19,12 +19,14 @@ sudo add-apt-repository ppa:font-manager/staging
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu hirsute-cran40/'
 sudo add-apt-repository universe
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 ```
 
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https code texlive-full
 ```
 
 Install RStudio and, then:
@@ -111,6 +113,8 @@ sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/theme /etc/regolith/styles/
 sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/typeface /etc/regolith/styles/nord/typeface
 ```
 
+
+
 ```bash
 /etc/regolith/
 ├── i3
@@ -166,3 +170,4 @@ Make `zsh` the default shell modifying `/etc/passwd`.
 ln -s /home/$USER/dotfiles/zsh/.p10k.zsh /home/$USER/.p10k.zsh
 ln -s /home/$USER/dotfiles/zsh/.zshrc /home/$USER/.zshrc
 ```
+
