@@ -30,7 +30,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code signal-desktop texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code signal-desktop texlive-full
 ```
 
 Install RStudio and, then:
@@ -101,9 +101,14 @@ Remove all `i3xrocks-*` packages (easier using _synaptic_), except:
 * `i3xrocks-time`
 * `i3xrocks-volume`
 
-# Symlink files
+# SSH server
 
-## Neovim
+```shell
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+# Symlink files
 
 ## Regolith
 
@@ -116,8 +121,6 @@ sudo ln -s /home/$USER/dotfiles/regolith/styles/i3xrocks /etc/regolith/styles/i3
 sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/theme /etc/regolith/styles/nord/theme
 sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/typeface /etc/regolith/styles/nord/typeface
 ```
-
-
 
 ```bash
 /etc/regolith/

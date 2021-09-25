@@ -23,6 +23,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias audio="alsactl restore"
 alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Downloads/my-website && cd ~"
+alias clock="tty-clock -csDC 7"
 alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias git-update="git add -A && git commit -m 'Update' && git push"
 alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
