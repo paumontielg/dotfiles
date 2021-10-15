@@ -30,7 +30,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code signal-desktop texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura gnome-boxes spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code signal-desktop texlive-full
 ```
 
 Install RStudio and, then:
