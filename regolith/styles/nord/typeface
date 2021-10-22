@@ -1,10 +1,10 @@
-! Typeface: JetBrainsMono Nerd Font
-#define typeface_bar_glyph  JetBrainsMono Nerd Font Regular 13
-#define typeface_wm         pango:JetBrainsMono Nerd Font Regular 13
-#define typeface_bar        pango:JetBrainsMono Nerd Font Regular 13, JetBrainsMono Nerd Font 13
-#define typeface_rofi       JetBrainsMono Nerd Font Regular 16
-#define typeface_terminal   JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true
-#define typeface_gnome_terminal JetBrainsMono Nerd Font 14
+! Typeface: FiraCode Nerd Font
+#define typeface_bar_glyph  FiraCode Nerd Font Regular 13
+#define typeface_wm         pango:FiraCode Nerd Font Regular 13
+#define typeface_bar        pango:FiraCode Nerd Font Regular 13, FiraCode Nerd Font 13
+#define typeface_rofi       FiraCode Nerd Font Regular 16
+#define typeface_terminal   FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true
+#define typeface_gnome_terminal FiraCode Nerd Font 14
 
 #define typeface_bar_glyph_wifi 
 #define typeface_bar_glyph_wired 

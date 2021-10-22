@@ -3,7 +3,7 @@ set statusbar-home-tilde  true
 set recolor               true
 set selection-clipboard   clipboard
 set guioptions            none
-set font                  "JetBrainsMono Nerd Font 13"
+set font                  "FiraCode Nerd Font 13"
 
 set statusbar-h-padding 0
 set statusbar-v-padding 0

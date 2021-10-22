@@ -27,7 +27,14 @@ alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@g
 alias clock="tty-clock -csDC 7"
 alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias git-update="git add -A && git commit -m 'Update' && git push"
+alias size="du -shc * | grep total"
 alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias tree="tree -ah"
+
+newAnimation() {
+    today=$(date +'%Y-%m-%d')
+    projectGenerator -o "$today"
+}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -46,3 +53,11 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
+
+# Golang
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# OpenFrameworks
+export PG_OF_PATH=/home/$USER/oF
