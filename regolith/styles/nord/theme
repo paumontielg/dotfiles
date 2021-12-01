@@ -4,8 +4,8 @@
 #define rofi_theme          /etc/regolith/styles/nord/rofi.rasi
 #define theme_terminal_scrollbar never
 
-#define i3wm_window_border_size         7
-#define i3wm_floatingwindow_border_size 7
-#define i3wm_gaps_inner_size            30
+#define i3wm_window_border_size         10
+#define i3wm_floatingwindow_border_size 10
+#define i3wm_gaps_inner_size            20
 #define i3wm_gaps_outer_size            10
 #define i3wm_bar_position               top
