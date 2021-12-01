@@ -1,9 +1,9 @@
 ! Typeface: FiraCode Nerd Font
-#define typeface_bar_glyph  FiraCode Nerd Font Regular 13
-#define typeface_wm         pango:FiraCode Nerd Font Regular 13
-#define typeface_bar        pango:FiraCode Nerd Font Regular 13, FiraCode Nerd Font 13
-#define typeface_rofi       FiraCode Nerd Font Regular 16
-#define typeface_terminal   FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true
+#define typeface_bar_glyph      FiraCode Nerd Font Regular 13
+#define typeface_wm             pango:FiraCode Nerd Font Regular 13
+#define typeface_bar            pango:FiraCode Nerd Font Regular 13, FiraCode Nerd Font 13
+#define typeface_rofi           FiraCode Nerd Font Regular 16
+#define typeface_terminal       FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true
 #define typeface_gnome_terminal FiraCode Nerd Font 14
 
 #define typeface_bar_glyph_wifi 
@@ -20,7 +20,7 @@
 #define typeface_bar_glyph_battery_ac 
 #define typeface_bar_glyph_battery_unknown 
 #define typeface_bar_glyph_time 
-#define typeface_bar_glyph_workspace 
+#define typeface_bar_glyph_workspace
 #define typeface_bar_glyph_disk 
 
 #define typeface_bar_glyph_media_playing 
@@ -40,7 +40,7 @@
 #define typeface_bar_glyph_off -
 
 #define typeface_bar_glyph_numlock 
-#define typeface_bar_glyph_capslock 
+#define typeface_bar_glyph_capslock A
 
 #define typeface_bar_glyph_error 
 

@@ -346,7 +346,7 @@ floating_modifier $mod
 # Hiding borders adjacent to the screen edges.
 # The "smart" setting hides borders on workspaces with only one window visible.
 set_from_resource $i3-wm.hide.edge.borders i3-wm.hide.edge.borders smart
-hide_edge_borders $i3-wm.hide.edge.borders
+# hide_edge_borders $i3-wm.hide.edge.borders
 
 # Set the default layout mode
 set_from_resource $i3-wm.workspace.layout i3-wm.workspace.layout default
@@ -521,8 +521,8 @@ bindsym $mod+r mode "Resize Mode"
 # Disable titlebar
 set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 1
 set_from_resource $i3-wm.floatingwindow.border.size i3-wm.floatingwindow.border.size 1
-default_border pixel $i3-wm.window.border.size
-default_floating_border pixel $i3-wm.floatingwindow.border.size
+for_window [class=".*" tiling] border pixel $i3-wm.window.border.size
+for_window [class=".*" tiling] floating_border pixel $i3-wm.floatingwindow.border.size
 
 # Specify the distance between windows in pixels. (i3-gaps)
 set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 5
