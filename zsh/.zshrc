@@ -29,6 +29,7 @@ alias git-update="git add -A && git commit -m 'Update' && git push"
 alias size="du -shc * | grep total"
 alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias tree="tree -ah"
+alias vi="nvim"
 
 newAnimation() {
     today=$(date +'%Y-%m-%d')

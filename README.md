@@ -10,10 +10,6 @@ Clone into home directory (`~` or `/home/$USER/`).
 
 ```shell
 sudo add-apt-repository ppa:regolith-linux/release
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo add-apt-repository -u ppa:snwh/ppa
 sudo add-apt-repository ppa:font-manager/staging
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
@@ -30,7 +26,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh typora zathura gnome-boxes spotify-client dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code signal-desktop texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh zathura gnome-boxes dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code clang astyle signal-desktop texlive-full
 ```
 
 Install RStudio and, then:
@@ -116,6 +112,12 @@ sudo systemctl start ssh
 mkdir /home/$USER/.config/nvim/
 ln -s /home/$USER/dotfiles/nvim/init.vim /home/$USER/.config/nvim/init.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+Then run the following on neovim,
+
+```neovim
+:PlugInstall
 ```
 
 ## Regolith

@@ -2,13 +2,17 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'haya14busa/incsearch.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+Plug 'zchee/deoplete-clang'
 
 call plug#end()
 
@@ -22,18 +26,31 @@ let g:airline_left_sep = ''
 let g:airline_powerline_fonts = 1
 let g:airline_right_sep = ''
 let g:airline_theme = 'base16_nord'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-12/lib/libclang.so'
+let g:deoplete#enable_at_startup = 1
 let g:gitgutter_set_sign_backgrounds = 1
-map <C-f>  <Plug>(incsearch-forward)
-map <C-w> :bd<CR>
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+map <A-Left> :bprev <CR>
+map <A-Right> :bnext <CR>
+map <C-w> :bd <CR>
+map <F5> :! g++ -g % -o %:r <CR>
+map <F6> :! g++ -g % -o %:r && ./%:r <CR>
+map <F8> :! cd %:h/..; make && make run <CR>
+map <F10> :%!astyle <CR>
 map <S-Tab> <Over>(incsearch-prev)
-map <S-t> :NERDTreeToggle<CR>
+map <C-space> :NERDTreeToggle <CR>
 map <Tab> <Over>(incsearch-next)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+map ? <Plug>(incsearch-forward)
+nnoremap <Esc><Esc> :<C-u>nohlsearch <CR>
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
 set cursorline
+set encoding=utf-8
 set guicursor=a:blinkon100
-set mouse=a
 set noshowmode
 set nu
 set shiftwidth=4
