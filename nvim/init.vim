@@ -17,6 +17,7 @@ Plug 'zchee/deoplete-clang'
 call plug#end()
 
 colorscheme nord
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#left_sep = ''
@@ -32,6 +33,7 @@ let g:gitgutter_set_sign_backgrounds = 1
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
+
 map <A-Left> :bprev <CR>
 map <A-Right> :bnext <CR>
 map <C-w> :bd <CR>
@@ -43,11 +45,13 @@ map <S-Tab> <Over>(incsearch-prev)
 map <C-space> :NERDTreeToggle <CR>
 map <Tab> <Over>(incsearch-next)
 map ? <Plug>(incsearch-forward)
+
 nnoremap <Esc><Esc> :<C-u>nohlsearch <CR>
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+
 set cursorline
 set encoding=utf-8
 set guicursor=a:blinkon100
