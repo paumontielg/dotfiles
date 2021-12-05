@@ -120,6 +120,8 @@ Then run the following on neovim,
 :PlugInstall
 ```
 
+> This configuration is exclusive for [openFrameworks](https://openframeworks.cc/).
+
 ## Regolith
 
 ```shell
