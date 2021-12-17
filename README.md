@@ -26,14 +26,14 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 ### Install packages
 
 ```shell
-sudo apt-get install -y regolith-desktop-complete git neovim paper-icon-theme libx11-dev libxcursor-dev libpng-dev font-manager zsh zathura gnome-boxes dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code clang astyle signal-desktop texlive-full
+sudo apt-get install -y regolith-desktop-complete git neovim libx11-dev libxcursor-dev libpng-dev font-manager zsh zathura gnome-boxes dirmngr gnupg apt-transport-https ca-certificates software-properties-common openssh-server r-base gdebi-core synaptic fonts-cmu software-properties-common apt-transport-https pdf2svg pulseaudio pavucontrol obs-studio code clang astyle signal-desktop texlive-full
 ```
 
 Install RStudio and, then:
 
 ```R
 install.packages("devtools")
-rstudioapi::addTheme("https://raw.githubusercontent.com/lusignan/nord-rstudio/master/Nord.rstheme", apply=TRUE, force=TRUE)
+rstudioapi::addTheme("https://raw.githubusercontent.com/dracula/rstudio/master/dracula.rstheme", apply = TRUE, force = TRUE)
 ```
 
 ### Fonts
@@ -125,13 +125,13 @@ Then run the following on neovim,
 ## Regolith
 
 ```shell
-sudo rm -rf /etc/regolith/i3/config /etc/regolith/i3xrocks/conf.d/* /etc/regolith/picom/config /etc/regolith/styles/i3xrocks /etc/regolith/styles/nord/theme /etc/regolith/styles/nord/typeface
+sudo rm -rf /etc/regolith/i3/config /etc/regolith/i3xrocks/conf.d/* /etc/regolith/picom/config /etc/regolith/styles/i3xrocks /etc/regolith/styles/dracula/theme /etc/regolith/styles/dracula/typeface
 sudo ln -s /home/$USER/dotfiles/regolith/i3/config /etc/regolith/i3/config
 sudo ln -s /home/$USER/dotfiles/regolith/i3xrocks/* /etc/regolith/i3xrocks/conf.d/
 sudo ln -s /home/$USER/dotfiles/regolith/picom/config /etc/regolith/picom/config
 sudo ln -s /home/$USER/dotfiles/regolith/styles/i3xrocks /etc/regolith/styles/i3xrocks
-sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/theme /etc/regolith/styles/nord/theme
-sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/typeface /etc/regolith/styles/nord/typeface
+sudo ln -s /home/$USER/dotfiles/regolith/styles/theme/theme /etc/regolith/styles/dracula/theme
+sudo ln -s /home/$USER/dotfiles/regolith/styles/theme/typeface /etc/regolith/styles/dracula/typeface
 ```
 
 ```bash
@@ -156,12 +156,12 @@ sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/typeface /etc/regolith/styl
 │   ├── gnome
 │   ├── i3-wm
 │   ├── i3xrocks -> /home/$USER/dotfiles/regolith/styles/i3xrocks
-│   ├── nord
+│   ├── dracula
 │   │   ├── color
 │   │   ├── rofi.rasi
 │   │   ├── root
-│   │   ├── theme -> /home/$USER/dotfiles/regolith/styles/nord/theme
-│   │   └── typeface -> /home/$USER/dotfiles/regolith/styles/nord/typeface
+│   │   ├── theme -> /home/$USER/dotfiles/regolith/styles/dracula/theme
+│   │   └── typeface -> /home/$USER/dotfiles/regolith/styles/dracula/typeface
 │   ├── rofi
 │   ├── root
 │   └── st-term
@@ -171,7 +171,7 @@ sudo ln -s /home/$USER/dotfiles/regolith/styles/nord/typeface /etc/regolith/styl
 ## Wallpaper
 
 ```shell
-sudo ln -s /home/$USER/dotfiles/wallpaper/leaves.jpg /usr/share/backgrounds/leaves.jpg
+sudo ln -s /home/$USER/dotfiles/wallpaper.jpeg /usr/share/backgrounds/wallpaper.jpeg
 ```
 
 ## Zathura

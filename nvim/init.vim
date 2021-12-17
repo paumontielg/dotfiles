@@ -3,7 +3,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
@@ -16,7 +16,7 @@ Plug 'zchee/deoplete-clang'
 
 call plug#end()
 
-colorscheme nord
+colorscheme dracula
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_alt_sep = ''
@@ -26,7 +26,7 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline_left_sep = ''
 let g:airline_powerline_fonts = 1
 let g:airline_right_sep = ''
-let g:airline_theme = 'base16_nord'
+let g:airline_theme = 'base16_dracula'
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-13/lib/libclang.so'
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_set_sign_backgrounds = 1
