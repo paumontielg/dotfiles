@@ -31,6 +31,13 @@ alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -
 alias tree="tree -ah"
 alias vi="nvim"
 
+lazygit() {
+    git status .
+    git add -A
+    git commit -m "$@"
+    git push
+}
+
 newAnimation() {
     today=$(date +'%Y-%m-%d')
     projectGenerator -o "$today" && cd $today && code .

@@ -42,7 +42,7 @@ map <F6> :! g++ -g % -o %:r && ./%:r <CR>
 map <F8> :! cd %:h/..; make && make run <CR>
 map <F10> :%!astyle <CR>
 map <S-Tab> <Over>(incsearch-prev)
-map <C-space> :NERDTreeToggle <CR>
+map <C-space> :NERDTreeToggle %<CR>
 map <Tab> <Over>(incsearch-next)
 map ? <Plug>(incsearch-forward)
 
