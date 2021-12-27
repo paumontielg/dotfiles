@@ -31,6 +31,15 @@ alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -
 alias tree="tree -ah"
 alias vi="nvim"
 
+find() {
+    if [ $# = 1 ]
+    then
+        command find . -iname "*$@*"
+    else
+        command find "$@"
+    fi
+}
+
 lazygit() {
     git status .
     git add -A
