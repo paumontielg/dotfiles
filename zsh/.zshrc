@@ -81,3 +81,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Nodejs
 export PATH=~/.npm-global/bin:$PATH
+
+# Pip
+export PATH=~/.local/bin:$PATH
+

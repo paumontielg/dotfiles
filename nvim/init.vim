@@ -39,6 +39,8 @@ let g:airline_right_sep=''
 let g:airline_theme='base16_dracula'
 let g:gitgutter_set_sign_backgrounds=1
 
+"map <silent> <F5> :! g++ -g % -o %:r <CR>
+"map <silent> <F6> :! g++ -g % -o %:r && ./%:r <CR>
 map <silent> <A-Down> :m+ <CR>
 map <silent> <A-Left> :bprev <CR>
 map <silent> <A-Right> :bnext <CR>
@@ -46,13 +48,11 @@ map <silent> <A-Up> :m-2 <CR>
 map <silent> <C-c> <Plug>NERDCommenterToggle
 map <silent> <C-space> :NERDTreeToggle %<CR>
 map <silent> <C-w> :bd <CR>
-map <silent> <F10> :%!astyle <CR>
-map <silent> <F12> :! cd %:h/..; make && make run <CR>
+map <silent> <F5> :! cd %:h/..; make && make run <CR>
+map <silent> <F8> :%!astyle <CR>
 map <silent> <S-Tab> <Over>(incsearch-prev)
 map <silent> <Tab> <Over>(incsearch-next)
 map <silent> ? <Plug>(incsearch-forward)
-"map <silent> <F5> :! g++ -g % -o %:r <CR>
-"map <silent> <F6> :! g++ -g % -o %:r && ./%:r <CR>
 
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
@@ -71,3 +71,4 @@ set softtabstop=4
 set tabstop=4
 set termguicolors
 set updatetime=250
+
