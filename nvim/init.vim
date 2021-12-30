@@ -23,6 +23,10 @@ call plug#end()
 
 colorscheme dracula
 
+autocmd FileType cpp map <silent> <F5> :! cd %:h/..; make && make run <CR>
+autocmd FileType python map <silent> <F5> :! python3 % <CR>
+autocmd FileType r map <silent> <F5> :! Rscript % <CR>
+
 let g:NERDTreeGitStatusWithFlags=1
 let g:NERDTreeShowHidden=1
 let g:UltiSnipsExpandTrigger='<tab>'
@@ -48,7 +52,6 @@ map <silent> <A-Up> :m-2 <CR>
 map <silent> <C-c> <Plug>NERDCommenterToggle
 map <silent> <C-space> :NERDTreeToggle %<CR>
 map <silent> <C-w> :bd <CR>
-map <silent> <F5> :! cd %:h/..; make && make run <CR>
 map <silent> <F8> :%!astyle <CR>
 map <silent> <S-Tab> <Over>(incsearch-prev)
 map <silent> <Tab> <Over>(incsearch-next)
