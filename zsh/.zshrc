@@ -77,3 +77,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # OpenFrameworks
 export PG_OF_PATH=/home/$USER/oF
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Nodejs
+export PATH=~/.npm-global/bin:$PATH
