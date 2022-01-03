@@ -74,4 +74,5 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
 # processing
-export PATH=~/processing-4.0b2:$PATH
+export PATH=$PATH:~/processing-4.0b2
+
