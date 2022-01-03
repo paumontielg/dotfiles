@@ -121,7 +121,7 @@ Then run the following on neovim,
 :CocInstall coc-clangd coc-html coc-json coc-markdownlint coc-prettier coc-pyright coc-r-lsp coc-sh coc-go coc-tsserver
 ```
 
-> This configuration is exclusive for `Python`, `R`, and [openFrameworks](https://openframeworks.cc/).
+> This configuration is exclusive for `Python`, `R`, and [Processing](https://processing.org/).
 
 ## Regolith
 

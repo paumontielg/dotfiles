@@ -14,6 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sophacles/vim-processing'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
@@ -23,7 +24,7 @@ call plug#end()
 
 colorscheme dracula
 
-autocmd FileType cpp map <silent> <F5> :! cd %:h/..; make && make run <CR>
+autocmd FileType processing map <silent> <F5> <Plug>(processing-run)
 autocmd FileType python map <silent> <F5> :! python3 % <CR>
 autocmd FileType r map <silent> <F5> :! Rscript % <CR>
 
@@ -44,6 +45,7 @@ let g:airline_powerline_fonts=1
 let g:airline_right_sep=''
 let g:airline_theme='base16_dracula'
 let g:gitgutter_set_sign_backgrounds=1
+let g:processing_doc_style='web'
 
 "map <silent> <F5> :! g++ -g % -o %:r <CR>
 "map <silent> <F6> :! g++ -g % -o %:r && ./%:r <CR>

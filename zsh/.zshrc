@@ -1,10 +1,6 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH="/home/carlos/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="eastwood"
 
 plugins=(
   copybuffer
@@ -24,8 +20,9 @@ source $ZSH/oh-my-zsh.sh
 alias audio="alsactl restore"
 alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Downloads/my-website && cd ~"
 alias clock="tty-clock -csDC 7"
-alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias git-update="git add -A && git commit -m 'Update' && git push"
+alias ls="ls -a"
+alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias size="du -shc * | grep total"
 alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias tree="tree -ah"
@@ -52,8 +49,7 @@ newAnimation() {
     projectGenerator -o "$today" && cd $today && code .
 }
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# conda
 __conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -65,23 +61,17 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
 
-# To customize prompt, run `p10k configure` or edit ~/dotfiles/zsh/.p10k.zsh.
-[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
-
-# Golang
+# golang
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-# OpenFrameworks
-export PG_OF_PATH=/home/$USER/oF
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Nodejs
+# nodejs
 export PATH=~/.npm-global/bin:$PATH
 
-# Pip
+# pip
 export PATH=~/.local/bin:$PATH
 
+# processing
+export PATH=~/processing-4.0b2:$PATH
