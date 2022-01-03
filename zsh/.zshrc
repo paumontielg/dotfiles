@@ -1,6 +1,6 @@
 export ZSH="/home/carlos/.oh-my-zsh"
 
-ZSH_THEME="minimal"
+ZSH_THEME="lezama"
 
 plugins=(
   copybuffer

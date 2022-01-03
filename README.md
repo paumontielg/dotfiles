@@ -1,6 +1,6 @@
 # My dotfiles
 
-OS: Ubuntu 21.04
+OS: Ubuntu 21.10
 
 Clone into home directory (`~` or `/home/$USER/`).
 
@@ -64,12 +64,6 @@ sudo mv GoogleDot-* /usr/share/icons/
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### powerlevel10k
-
-```shell
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 #### Auto-suggestions
@@ -187,7 +181,7 @@ ln -s /home/$USER/dotfiles/zathura/zathurarc /home/$USER/.config/zathura/zathura
 Make `zsh` the default shell modifying `/etc/passwd`.
 
 ```shell
-ln -s /home/$USER/dotfiles/zsh/.p10k.zsh /home/$USER/.p10k.zsh
+ln -s /home/$USER/dotfiles/zsh/lezama.zsh-theme /home/$USER/.oh-my-zsh/themes/lezama.zsh-theme
 ln -s /home/$USER/dotfiles/zsh/.zshrc /home/$USER/.zshrc
 ```
 
