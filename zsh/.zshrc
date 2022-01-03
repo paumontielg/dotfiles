@@ -1,6 +1,6 @@
 export ZSH="/home/carlos/.oh-my-zsh"
 
-ZSH_THEME="eastwood"
+ZSH_THEME="minimal"
 
 plugins=(
   copybuffer
