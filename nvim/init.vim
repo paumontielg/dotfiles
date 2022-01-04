@@ -13,6 +13,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sophacles/vim-processing'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -22,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+set background=dark
 colorscheme dracula
 
 autocmd FileType processing map <silent> <F5> <Plug>(processing-run)

@@ -45,8 +45,7 @@ lazygit() {
 }
 
 newAnimation() {
-    today=$(date +'%Y-%m-%d')
-    projectGenerator -o "$today" && cd $today && code .
+    mkdir -p "$@" && nvim "$@"/"$@".pde
 }
 
 # conda
