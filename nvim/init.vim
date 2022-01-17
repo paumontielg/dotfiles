@@ -31,11 +31,11 @@ autocmd FileType processing map <F5> <Plug>(processing-run)
 autocmd FileType python map <F5> :! python3 % <CR>
 autocmd FileType r map <F5> :! Rscript % <CR>
 
-inoremap <silent><expr> <C-space> coc#refresh()
+"inoremap <silent><expr> <C-space> coc#refresh()
 
 let g:NERDTreeGitStatusWithFlags=1
 let g:NERDTreeShowHidden=1
-let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsExpandTrigger='<A-space>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:airline#extensions#tabline#enabled=1
