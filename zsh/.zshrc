@@ -28,6 +28,10 @@ alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -
 alias tree="tree -ah"
 alias vi="nvim"
 
+animation() {
+    mkdir -p "$@" && nvim "$@"/"$@".pde
+}
+
 find() {
     if [ $# = 1 ]
     then
@@ -42,10 +46,6 @@ lazygit() {
     git add -A
     git commit -m "$@"
     git push
-}
-
-newAnimation() {
-    mkdir -p "$@" && nvim "$@"/"$@".pde
 }
 
 # conda
