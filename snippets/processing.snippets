@@ -4,13 +4,16 @@ final String sketchname = getClass().getName();
 import com.hamoid.*;
 VideoExport videoExport;
 
+color bg = #f1f1f1;
+color fg = #111111;
+
 void setup() {
-	size(${1:1080}, ${2:1080}); // 1080px wide, 1920px tall for video
+	size(${1:900}, ${2:900}); // 1080px wide, 1920px tall for video
 }
 
 void draw() {
-	background(#111111);
-	fill(#f1f1f1);
+	background(bg);
+	fill(fg);
 	noStroke();
 
 	${0}

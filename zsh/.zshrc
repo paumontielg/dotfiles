@@ -49,6 +49,10 @@ lazygit() {
     git push
 }
 
+search() {
+    grep -binrs . -e "$@"
+}
+
 # conda
 __conda_setup="$('/home/$USER/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
