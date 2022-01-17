@@ -1,0 +1,32 @@
+snippet setup
+final String sketchname = getClass().getName();
+
+import com.hamoid.*;
+VideoExport videoExport;
+
+void setup() {
+	size(${1:1080}, ${2:1080}); // 1080px wide, 1920px tall for video
+}
+
+void draw() {
+	background(#111111);
+	fill(#f1f1f1);
+	noStroke();
+
+	${0}
+
+	//saveFrame("out/####.png");
+	//rec();
+}
+
+void rec() {
+	if (frameCount == 1) {
+		videoExport = new VideoExport(this, "out/"+sketchname+".mp4");
+		videoExport.setFrameRate(${3:60});
+		videoExport.startMovie();
+	}
+	
+	videoExport.saveFrame();
+}
+
+endsnippet

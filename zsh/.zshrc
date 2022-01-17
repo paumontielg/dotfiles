@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias audio="alsactl restore"
 alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Downloads/my-website && cd ~"
+alias cat="bat --theme=ansi"
 alias clock="tty-clock -csDC 7"
 alias git-update="git add -A && git commit -m 'Update' && git push"
 alias ls="ls -A"
@@ -29,24 +30,7 @@ alias tree="tree -ah"
 alias vi="nvim"
 
 animation() {
-    mkdir -p "$@" &&
-		mkdir -p "$@"/out &&
-		touch "$@"/out/.gitkeep &&
-		echo 'final String sketchname = getClass().getName();
-
-import com.hamoid.*;
-VideoExport videoExport;
-
-void rec() {
-    if (frameCount == 1) {
-        videoExport = new VideoExport(this, "out/" + sketchname + ".mp4");
-        videoExport.setFrameRate(60);
-        videoExport.startMovie();
-    }
-    videoExport.saveFrame();
-}
-' > "$@"/rec.pde &&
-		nvim "$@"/"$@".pde
+    mkdir -p "$@" && mkdir -p "$@"/out && touch "$@"/out/.gitkeep && nvim "$@"/"$@".pde
 }
 
 find() {
@@ -82,6 +66,7 @@ unset __conda_setup
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=${GOROOT}/bin:${PATH}
 
 # nodejs
 export PATH=~/.npm-global/bin:$PATH

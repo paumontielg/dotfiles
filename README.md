@@ -97,10 +97,15 @@ Then run the following on neovim,
 
 ```neovim
 :PlugInstall
-:CocInstall coc-clangd coc-html coc-json coc-markdownlint coc-prettier coc-pyright coc-r-lsp coc-sh coc-go coc-tsserver
 ```
 
-> This configuration is exclusive for `Python`, `R`, and [Processing](https://processing.org/).
+### UltiSnips
+
+```shell
+ln -s /home/$USER/dotfiles/snippets/processing.snippets /home/$USER/.config/nvim/UltiSnips/processing.snippets
+```
+
+> This configuration is exclusive for [Processing](https://processing.org/).
 
 ## Wallpaper
 
