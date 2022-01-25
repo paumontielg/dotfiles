@@ -26,7 +26,6 @@ alias ls="ls -A"
 alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias size="du -shc * | grep total"
 alias sysupdate="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
-alias tree="tree -ah"
 alias vi="nvim"
 
 animation() {

@@ -60,9 +60,11 @@ map <A-Up> :m-2 <CR>
 map <C-c> <Plug>NERDCommenterToggle
 map <C-space> :NERDTreeToggle %<CR>
 map <C-w> :bd <CR>
+map <Down> jzz
 map <F8> :%!astyle <CR>
 map <S-Tab> <Over>(incsearch-prev)
 map <Tab> <Over>(incsearch-next)
+map <Up> kzz
 map ? <Plug>(incsearch-forward)
 
 "nmap gd <Plug>(coc-definition)
@@ -81,6 +83,7 @@ set completeopt-=preview
 set cursorline
 set encoding=utf-8
 set noshowmode
+set noswapfile
 set nu
 set shiftwidth=4
 set showtabline=2
