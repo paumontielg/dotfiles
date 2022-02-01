@@ -82,9 +82,8 @@ ln -s $HOME/dotfiles/snippets/processing.snippets $HOME/.config/nvim/UltiSnips/p
 
 ## ZSH
 
-Make `zsh` the default shell modifying `/etc/passwd`.
-
 ```shell
-ln -s $HOME/dotfiles/zsh/lezama.zsh-theme $HOME/.oh-my-zsh/themes/lezama.zsh-theme 
+rm $HOME/.zshrc
 ln -s $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/zsh/lezama.zsh-theme $HOME/.oh-my-zsh/themes/lezama.zsh-theme
 ```
