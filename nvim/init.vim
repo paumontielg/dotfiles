@@ -69,7 +69,7 @@ map <A-Left> :bprev <CR>
 map <A-Right> :bnext <CR>
 map <A-Up> :m-2 <CR>
 map <C-c> <Plug>NERDCommenterToggle
-map <C-space> :NERDTreeToggle %<CR>
+map <C-e> :NERDTreeToggle %<CR>
 map <C-w> :bd <CR>
 map <Down> jzz
 map <F8> :%!astyle <CR>
