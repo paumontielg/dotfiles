@@ -1,4 +1,4 @@
-export ZSH="/home/carlos/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="lezama"
 
@@ -15,9 +15,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias audio="alsactl restore"
 alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Downloads/my-website && cd ~"
 alias cat="bat --theme=ansi"
 alias clock="tty-clock -csDC 7"
@@ -65,17 +62,17 @@ fi
 unset __conda_setup
 
 # golang
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export PATH=${GOROOT}/bin:${PATH}
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# export PATH=${GOROOT}/bin:${PATH}
 
 # nodejs
-export PATH=~/.npm-global/bin:$PATH
+# export PATH=~/.npm-global/bin:$PATH
 
 # pip
-export PATH=~/.local/bin:$PATH
+# export PATH=~/.local/bin:$PATH
 
 # processing
-export PATH=$PATH:~/processing-4.0b2
+# export PATH=$PATH:~/processing-4.0b2
 
