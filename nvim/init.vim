@@ -89,6 +89,6 @@ set shiftwidth=4
 set showtabline=2
 set softtabstop=4
 set tabstop=4
-set termguicolors
+"set termguicolors
 set updatetime=250
 

@@ -20,6 +20,7 @@ brew update
 brew install speedtest --force
 brew install astyle cmake cmake-docs font-fira-code-nerd-font git gh pdf2svg tree
 brew upgrade
+```
 
 
 Install RStudio and, then:
