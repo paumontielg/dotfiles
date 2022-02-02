@@ -7,10 +7,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nikolvs/vim-sunbather'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -43,7 +43,7 @@ call plug#end()
 autocmd FileType processing map <F1> <Plug>(processing-keyword)
 autocmd FileType processing map <F5> <Plug>(processing-run)
 
-colorscheme dracula
+colorscheme sunbather
 
 let g:NERDTreeGitStatusWithFlags=1
 let g:NERDTreeShowHidden=1
@@ -58,10 +58,11 @@ let g:airline#extensions#tabline#right_sep=''
 let g:airline_left_sep=''
 let g:airline_powerline_fonts=1
 let g:airline_right_sep=''
-let g:gitgutter_sign_added='●'
-let g:gitgutter_sign_modified='●'
-let g:gitgutter_sign_removed='●'
+let g:airline_theme='monochrome'
 let g:gitgutter_set_sign_backgrounds=1
+let g:gitgutter_sign_added='+'
+let g:gitgutter_sign_modified='~'
+let g:gitgutter_sign_removed='_'
 let g:processing_doc_style='web'
 
 map <A-Down> :m+ <CR>
@@ -90,6 +91,7 @@ set encoding=utf-8
 set noshowmode
 set noswapfile
 set nu
+set shell=zsh
 set shiftwidth=4
 set showtabline=2
 set softtabstop=4
