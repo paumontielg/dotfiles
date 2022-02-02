@@ -4,16 +4,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Plug 'cjrh/vim-conda'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'nikolvs/vim-sunbather'
+"Plug 'rafi/awesome-vim-colorschemes'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'nikolvs/vim-sunbather'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sophacles/vim-processing'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -37,13 +38,11 @@ call plug#end()
 "nmap gi <Plug>(coc-implementation)
 "nmap gr <Plug>(coc-references)
 "nmap gy <Plug>(coc-type-definition)
-"set background=dark
-"set termguicolors
 
 autocmd FileType processing map <F1> <Plug>(processing-keyword)
 autocmd FileType processing map <F5> <Plug>(processing-run)
 
-colorscheme sunbather
+colorscheme dracula
 
 let g:NERDTreeGitStatusWithFlags=1
 let g:NERDTreeShowHidden=1
@@ -58,11 +57,11 @@ let g:airline#extensions#tabline#right_sep=''
 let g:airline_left_sep=''
 let g:airline_powerline_fonts=1
 let g:airline_right_sep=''
-let g:airline_theme='monochrome'
+let g:airline_theme='base16_dracula'
 let g:gitgutter_set_sign_backgrounds=1
-let g:gitgutter_sign_added='+'
-let g:gitgutter_sign_modified='~'
-let g:gitgutter_sign_removed='_'
+let g:gitgutter_sign_added='■'
+let g:gitgutter_sign_modified='■'
+let g:gitgutter_sign_removed='■'
 let g:processing_doc_style='web'
 
 map <A-Down> :m+ <CR>
@@ -85,6 +84,7 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <Esc><Esc> :<C-u>nohlsearch <CR>
 
+set background=dark
 set completeopt-=preview
 set cursorline
 set encoding=utf-8
@@ -96,5 +96,6 @@ set shiftwidth=4
 set showtabline=2
 set softtabstop=4
 set tabstop=4
+set termguicolors
 set updatetime=250
 
