@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias autoupdate-website="cd ~/Downloads && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Downloads/my-website && cd ~"
+alias autoupdate-website="cd ~/Desktop && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Desktop/my-website && cd ~"
 alias cat="bat --theme=ansi"
 alias clock="tty-clock -csDC 7"
 alias git-update="git add -A && git commit -m 'Update' && git push"
@@ -42,8 +42,7 @@ search() {
 }
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# conda
 __conda_setup="$('/Users/carlos/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -55,4 +54,6 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+
+# gfortran
+export PATH=$PATH:/opt/R/arm64/gfortran/bin
