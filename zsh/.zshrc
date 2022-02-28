@@ -14,7 +14,7 @@ alias ls="ls -A"
 alias new-app="defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock"
 alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias size="du -shc * | grep total"
-alias sysupdate="brew update && brew upgrade && brew cleanup"
+alias sysupdate="speedtest && brew update && brew upgrade && brew cleanup && neofetch"
 alias vi="nvim"
 
 animation() {
@@ -57,3 +57,7 @@ unset __conda_setup
 
 # gfortran
 export PATH=$PATH:/opt/R/arm64/gfortran/bin
+
+# pip
+export PATH=$PATH:~/Library/Python/3.8/bin
+

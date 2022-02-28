@@ -19,7 +19,7 @@ brew tap teamookla/speedtest
 ```shell
 brew update
 brew install speedtest --force
-brew install astyle bat cask cmake cmake-docs coreutils ffmpeg font-fira-code-nerd-font git gh gnu-sed insect neofetch onefetch osx-cpu-temp pdf2svg tree tty-clock wget zsh-autosuggestions zsh-syntax-highlighting
+brew install astyle bat cask cmake cmake-docs coreutils ffmpeg font-fira-code-nerd-font git gh gnu-sed insect neofetch onefetch osx-cpu-temp pipes-sh pdf2svg tree tty-clock wget zsh-autosuggestions zsh-syntax-highlighting
 brew upgrade
 ```
 
