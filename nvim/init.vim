@@ -59,9 +59,6 @@ let g:airline_powerline_fonts=1
 let g:airline_right_sep=''
 let g:airline_theme='base16_dracula'
 let g:gitgutter_set_sign_backgrounds=1
-let g:gitgutter_sign_added='■'
-let g:gitgutter_sign_modified='■'
-let g:gitgutter_sign_removed='■'
 let g:processing_doc_style='web'
 
 map <A-Down> :m+ <CR>

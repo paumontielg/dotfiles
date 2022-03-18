@@ -9,7 +9,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias autoupdate-website="cd ~/Desktop && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Desktop/my-website && cd ~"
 alias cat="bat --theme=ansi"
 alias clock="tty-clock -csDC 7"
-alias git-update="git add -A && git commit -m 'Update' && git push"
+alias update-git="git add -A && git commit -m 'Update' && git push"
 alias ls="ls -A"
 alias new-app="defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock"
 alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
