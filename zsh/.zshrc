@@ -1,3 +1,9 @@
+export CPPFLAGS=-I/opt/homebrew/opt/ruby/include
+export LDFLAGS=-L/opt/homebrew/opt/ruby/lib
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+export PATH=$PATH:/opt/R/arm64/gfortran/bin
+export PATH=$PATH:~/Library/Python/3.8/bin
+export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="lezama"
@@ -43,7 +49,6 @@ search() {
     grep -binrs . -e "$@"
 }
 
-# conda
 __conda_setup="$('/Users/carlos/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -55,10 +60,4 @@ else
     fi
 fi
 unset __conda_setup
-
-# gfortran
-export PATH=$PATH:/opt/R/arm64/gfortran/bin
-
-# pip
-export PATH=$PATH:~/Library/Python/3.8/bin
 
