@@ -1,8 +1,11 @@
+" Author: Carlos Lezama
+
 if !exists('g:loaded_cmp') | finish | endif
 
 set completeopt=menuone,noinsert,noselect
 
 lua <<EOF
+
     local cmp = require'cmp'
     local lspkind = require'lspkind'
 
