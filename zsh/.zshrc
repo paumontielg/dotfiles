@@ -21,7 +21,7 @@ alias ls="ls -A"
 alias new-app="defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock"
 alias new-course="mkdir -p course/{coursework,exams/{solved,unsolved},exercises/{solved,unsolved},homework/{solved,unsolved},labs/{solved,unsolved},notes,papers,projects}"
 alias size="du -shc * | grep total"
-alias sysupdate="speedtest && brew update && brew upgrade && brew cleanup && neofetch"
+alias sysupdate="speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch"
 alias update-git="git add -A && git commit -m 'Update' && git push"
 alias vi="nvim"
 
