@@ -23,7 +23,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     number = true, -- Show numberline
     preserveindent = true, -- Preserve indent structure as much as possible
     pumheight = 10, -- Height of the pop up menu
-    relativenumber = true, -- Show relative numberline
+    relativenumber = false, -- Show relative numberline
     scrolloff = 8, -- Number of lines to keep above and below the cursor
     shell = "zsh", -- Shell to use for the shell command
     shiftwidth = 4, -- Number of space inserted for indentation
