@@ -10,7 +10,8 @@ function M.config()
         {
           type = "text",
           val = astronvim.user_plugin_opts("header", {
-            "hi.",
+            "un día bien,",
+            "al otro mal.",
           }, false),
           opts = { position = "center", hl = "DashboardHeader" },
         },
