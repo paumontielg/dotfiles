@@ -11,7 +11,7 @@ function M.config()
     telescope.setup(astronvim.user_plugin_opts("plugins.telescope", {
       defaults = {
 
-        prompt_prefix = " ",
+        prompt_prefix = " ",
         selection_caret = "❯ ",
         path_display = { "truncate" },
         selection_strategy = "reset",
