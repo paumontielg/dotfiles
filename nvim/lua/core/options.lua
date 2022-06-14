@@ -9,6 +9,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
   opt = {
     backspace = vim.opt.backspace + { "nostop" }, -- Don't stop backspace at insert
     clipboard = "unnamedplus", -- Connection to the system clipboard
+    -- columns = 80;
     completeopt = { "menuone", "noselect" }, -- Options for insert mode completion
     copyindent = true, -- Copy the previous indentation on autoindenting
     cursorline = true, -- Highlight the text line of the cursor
@@ -19,6 +20,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     ignorecase = true, -- Case insensitive searching
     laststatus = 3, -- globalstatus
     lazyredraw = true, -- lazily redraw screen
+    linebreak = true,
     mouse = "a", -- Enable mouse support
     number = true, -- Show numberline
     preserveindent = true, -- Preserve indent structure as much as possible
