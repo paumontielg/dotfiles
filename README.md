@@ -14,12 +14,71 @@ brew tap homebrew/cask-fonts
 brew tap teamookla/speedtest
 ```
 
-### Install packages
+### Install packages and casks
 
 ```shell
 brew update
+
 brew install speedtest --force
-brew install astyle bat cask cmake cmake-docs coreutils fd ffmpeg font-fira-code-nerd-font git gh go gnu-sed hugo insect neofetch node onefetch osx-cpu-temp pipes-sh pdf2svg ruby tree tty-clock wget zsh-autosuggestions zsh-syntax-highlighting
+
+brew install \
+anaconda \
+android-studio \
+astyle \
+bat \
+cask \
+cheatsheet \
+cmake \
+cmake-docs \
+coreutils \
+docker \
+fd \
+ffmpeg \
+flutter \
+font-fira-code-nerd-font \
+gh \
+ghostscript \
+git \
+gnu-sed \
+go \
+google-chrome \
+hazeover \
+hugo \
+imagemagick \
+insect \
+iterm2 \
+keycastr \
+microsoft-excel \
+microsoft-powerpoint \
+microsoft-teams \
+microsoft-word \
+miktex-console \
+neofetch \
+node \
+numi \
+onefetch \
+osx-cpu-temp \
+pdf2svg \
+pipes-sh \
+processing \
+r \
+rstudio \
+ruby \
+slack \
+spotify \
+stats \
+tree \
+tty-clock \
+typora \
+visual-studio-code \
+vlc \
+wget \
+whatsapp \
+windows95 \
+zoom \
+zsh-autosuggestions \
+zsh-syntax-highlighting
+
 brew upgrade
 ```
 
