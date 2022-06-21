@@ -67,6 +67,7 @@ ruby \
 slack \
 spotify \
 stats \
+steam \
 tree \
 tty-clock \
 typora \
