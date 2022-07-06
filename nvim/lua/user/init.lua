@@ -71,7 +71,7 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      { "github/copilot.vim" },
+      -- { "github/copilot.vim" },
       { "shaunsingh/nord.nvim" },
     },
     -- All other entries override the setup() call for default plugins

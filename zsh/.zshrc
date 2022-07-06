@@ -15,7 +15,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias autoupdate-website="cd ~/Desktop && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m 'Automatic Update' && git push && rm -rf ~/Desktop/my-website && cd ~"
 alias cat="bat --theme=ansi"
 alias clock="tty-clock -csDC 7"
-alias config-vi="vi ~/.config/nvim/init.vim"
+alias config-vi="vi ~/.config/nvim/init.lua"
 alias config-zsh="vi ~/.zshrc && source ~/.zshrc"
 alias get-requirements="pip freeze | cut -d "=" -f1 | cut -d "@" -f1 > requirements.txt"
 alias git-info="onefetch --show-logo never"
