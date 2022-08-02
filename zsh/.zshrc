@@ -1,8 +1,10 @@
 export CPPFLAGS=-I/opt/homebrew/opt/ruby/include
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export LDFLAGS=-L/opt/homebrew/opt/ruby/lib
-export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 export PATH=$PATH:/opt/R/arm64/gfortran/bin
 export PATH=$PATH:~/Library/Python/3.8/bin
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
 export ZSH=~/.oh-my-zsh
 
