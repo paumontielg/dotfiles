@@ -42,7 +42,6 @@ git \
 gnu-sed \
 go \
 google-chrome \
-hazeover \
 hugo \
 imagemagick \
 insect \
@@ -75,7 +74,6 @@ visual-studio-code \
 vlc \
 wget \
 whatsapp \
-windows95 \
 zoom \
 zsh-autosuggestions \
 zsh-syntax-highlighting
