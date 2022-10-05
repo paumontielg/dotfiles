@@ -2,6 +2,7 @@ export CPPFLAGS=-I/opt/homebrew/opt/ruby/include
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LDFLAGS=-L/opt/homebrew/opt/ruby/lib
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH:/opt/R/arm64/gfortran/bin
 export PATH=$PATH:~/Library/Python/3.8/bin
 export PATH=/opt/homebrew/opt/ruby/bin:$PATH
@@ -21,7 +22,7 @@ alias autoupdate-website="cd ~/Desktop && git clone --recurse-submodules git@git
 alias cat="bat --theme=ansi"
 alias clock="tty-clock -csDC 7"
 alias config-vi="vi ~/.config/nvim/init.lua"
-alias config-zsh="vi ~/.zshrc && source ~/.zshrc"
+alias config-zsh="vi ~/.zshrc && unalias -m '*' && source ~/.zshrc"
 alias get-requirements="pip freeze | cut -d "=" -f1 | cut -d "@" -f1 > requirements.txt"
 alias git-info="onefetch --show-logo never"
 alias ls="ls -A"
