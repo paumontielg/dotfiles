@@ -43,8 +43,9 @@ search() {
 }
 
 update-git() {
-git rm -r --cached .
-git add -A
-git commit -m "Update"
-git push
+    git status .
+    git rm -r --cached .
+    git add -A
+    git commit -m 'Update'
+    git push
 }
