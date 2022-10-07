@@ -9,9 +9,14 @@ Clone into home directory (`~` or `$HOME`).
 ### Add repositories
 
 ```shell
-brew tap cjbassi/ytop
 brew tap homebrew/cask-fonts
 brew tap teamookla/speedtest
+```
+
+### Install oh-my-zsh
+
+```shell
+sh -c '$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)'
 ```
 
 ### Install packages and casks
@@ -23,57 +28,39 @@ brew install speedtest --force
 
 brew install \
 anaconda \
-android-studio \
 astyle \
 bat \
-cask \
+bottom \
 cheatsheet \
 cmake \
 cmake-docs \
-coreutils \
+discord \
 docker \
-fd \
-ffmpeg \
-flutter \
+dotnet \
 font-fira-code-nerd-font \
 gh \
-ghostscript \
 git \
-gnu-sed \
 go \
-google-chrome \
+gnupg \
+grid-clock \
+helix \
 hugo \
-imagemagick \
-insect \
 iterm2 \
 keycastr \
-microsoft-excel \
-microsoft-powerpoint \
-microsoft-teams \
-microsoft-word \
-miktex-console \
+mactex \
 neofetch \
 node \
-numi \
+notion \
 onefetch \
-osx-cpu-temp \
-pdf2svg \
-pipes-sh \
 processing \
 r \
 rstudio \
-ruby \
-slack \
-spotify \
+rust \
 stats \
-steam \
 tree \
-tty-clock \
-typora \
+typora
 visual-studio-code \
-vlc \
 wget \
-whatsapp \
 zoom \
 zsh-autosuggestions \
 zsh-syntax-highlighting
@@ -81,12 +68,11 @@ zsh-syntax-highlighting
 brew upgrade
 ```
 
-
 Install RStudio and, then:
 
 ```R
-install.packages("devtools")
-rstudioapi::addTheme("https://raw.githubusercontent.com/dracula/rstudio/master/dracula.rstheme", apply = TRUE, force = TRUE)
+install.packages('devtools')
+rstudioapi::addTheme('https://raw.githubusercontent.com/dracula/rstudio/master/dracula.rstheme', apply = TRUE, force = TRUE)
 ```
 
 # Symlink files
@@ -98,12 +84,10 @@ ln -s ~/dotfiles/git/.gitignore ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
 ```
 
-## Neovim
+## Helix
 
 ```shell
-ln -s ~/dotfiles/nvim ~/.config
-nvim +PackerSync
-
+ln -s ~/dotfiles/helix/config.toml ~/.config/helix/config.toml
 ```
 
 ## ZSH
@@ -112,5 +96,5 @@ nvim +PackerSync
 mkdir ~/.config/zsh
 rm ~/.zshrc
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/lezama.zsh-theme ~/.config/zsh/lezama.zsh-theme
+ln -s ~/dotfiles/zsh/lezama.zsh-theme ~/.oh-my-zsh/themes/lezama.zsh-theme
 ```
