@@ -93,7 +93,6 @@ ln -s ~/dotfiles/helix/config.toml ~/.config/helix/config.toml
 ## ZSH
 
 ```shell
-mkdir ~/.config/zsh
 rm ~/.zshrc
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/lezama.zsh-theme ~/.oh-my-zsh/themes/lezama.zsh-theme
