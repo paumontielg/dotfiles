@@ -29,7 +29,6 @@ alias ls='ls -a'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias size='du -shc * | grep total'
 alias sysupdate='speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch'
-alias update-git='git add -A && git commit -m 'Update' && git push'
 alias vi='hx'
 
 lazygit() {
@@ -41,4 +40,11 @@ lazygit() {
 
 search() {
     grep -binrs . -e '$@'
+}
+
+update-git() {
+git rm -r --cached .
+git add -A
+git commit -m "Update"
+git push
 }
