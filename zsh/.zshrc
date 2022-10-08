@@ -24,7 +24,7 @@ alias autoupdate-website='cd ~/Desktop && git clone --recurse-submodules git@git
 alias cat='bat --theme=ansi'
 alias config-vi='vi ~/.config/helix/config.toml'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc && neofetch'
-alias git-info='onefetch --show-logo never && tokei .'
+alias git-info='tokei . & onefetch --show-logo never'
 alias ls='ls -a'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias size='du -shc * | grep total'
