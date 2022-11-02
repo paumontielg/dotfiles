@@ -24,9 +24,11 @@ alias autoupdate-website='cd ~/Desktop && git clone --recurse-submodules git@git
 alias cat='bat --theme=ansi'
 alias config-vi='vi ~/.config/helix/config.toml'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc && neofetch'
+alias fix-sf='conda uninstall --force cffi && pip install cffi'
 alias git-info='tokei . & onefetch --show-logo never'
 alias ls='ls -a'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
+alias rstudio='open -a rstudio' # MacOS only
 alias size='du -shc * | grep total'
 alias sysupdate='speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch'
 alias vi='hx'
@@ -34,12 +36,12 @@ alias vi='hx'
 lazygit() {
     git status .
     git add -A
-    git commit -m '$@'
+    git commit -m "$@"
     git push
 }
 
 search() {
-    grep -binrs . -e '$@'
+    grep -binrs . -e "$@"
 }
 
 update-git() {
@@ -49,3 +51,19 @@ update-git() {
     git commit -m 'Update'
     git push
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
