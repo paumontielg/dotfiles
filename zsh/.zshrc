@@ -1,18 +1,17 @@
-# export CPPFLAGS=-I/opt/homebrew/opt/ruby/include
-# export LDFLAGS=-L/opt/homebrew/opt/ruby/lib
 # export PATH=$HOME/.cargo/bin:$PATH
 # export PATH=$PATH:/opt/R/arm64/gfortran/bin
 # export PATH=$PATH:~/Library/Python/3.8/bin
-# export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-# export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export PATH=/Applications/MATLAB_R2022b.app/bin:$PATH
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
+export PATH=/opt/homebrew/opt/libxml2/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
 export ZSH=~/.oh-my-zsh
 export NVM_DIR='$HOME/.nvm'
-  [ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'  # This loads nvm
-  [ -s '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' ] && \. '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm'  # This loads nvm bash_completion
+[ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'                                       # This loads nvm
+[ -s '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' ] && \. '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' # This loads nvm bash_completion
 
 ZSH_THEME='lezama'
 
@@ -24,14 +23,16 @@ alias autoupdate-website='cd ~/Desktop && git clone --recurse-submodules git@git
 alias cat='bat --theme=ansi'
 alias config-vi='vi ~/.config/helix/config.toml'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc && neofetch'
-alias fix-sf='conda uninstall --force cffi && pip install cffi'
 alias git-info='tokei . & onefetch --show-logo never'
 alias ls='ls -a'
-alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
-alias rstudio='open -a rstudio' # MacOS only
+alias mtlb='matlab -nojvm -nodesktop -nosplash'
+alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock' # MacOS only
+alias rstudio='open -a rstudio'                                                         # MacOS only
 alias size='du -shc * | grep total'
 alias sysupdate='speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch'
 alias vi='hx'
+alias work-fix='conda uninstall --force cffi && pip install cffi'
+alias work-time='conda activate && conda deactivate && conda activate rpp && cd /Volumes/GoogleDrive/My\ Drive'
 
 lazygit() {
     git status .
@@ -54,7 +55,7 @@ update-git() {
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -66,4 +67,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
