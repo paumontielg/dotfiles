@@ -1,13 +1,13 @@
 # export PATH=$HOME/.cargo/bin:$PATH
-# export PATH=$PATH:/opt/R/arm64/gfortran/bin
-# export PATH=$PATH:~/Library/Python/3.8/bin
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH=/Applications/MATLAB_R2022b.app/bin:$PATH
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
-export PATH=/opt/homebrew/opt/libxml2/bin:$PATH
+export PATH=/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
+export PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
+export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
 export ZSH=~/.oh-my-zsh
 export NVM_DIR='$HOME/.nvm'
 [ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'                                       # This loads nvm
@@ -19,30 +19,22 @@ source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias autoupdate-website='cd ~/Desktop && git clone --recurse-submodules git@github.com:celj/my-website.git && cd my-website && git submodule update --remote --merge && git add -A && git commit -m "Automatic Update" && git push && rm -rf ~/Desktop/my-website && cd ~'
 alias cat='bat --theme=ansi'
 alias config-vi='vi ~/.config/helix/config.toml'
-alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc && neofetch'
+alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
 alias git-info='tokei . & onefetch --show-logo never'
-alias ls='ls -a'
-alias mtlb='matlab -nojvm -nodesktop -nosplash'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock' # MacOS only
 alias rstudio='open -a rstudio'                                                         # MacOS only
 alias size='du -shc * | grep total'
-alias sysupdate='speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch'
+alias sysupdate='speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch && brew bundle dump --force --file=~/dotfiles/brew/pkgs'
 alias vi='hx'
-alias work-fix='conda uninstall --force cffi && pip install cffi'
-alias work-time='conda activate && conda deactivate && conda activate rpp && cd /Volumes/GoogleDrive/My\ Drive'
+alias work-time='cd ~/Library/CloudStorage/GoogleDrive-carlos.lezama@rappi.com/My\ Drive'
 
 lazygit() {
     git status .
     git add -A
     git commit -m "$@"
     git push
-}
-
-search() {
-    grep -binrs . -e "$@"
 }
 
 update-git() {
