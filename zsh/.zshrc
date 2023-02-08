@@ -2,7 +2,6 @@
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export PATH=/Applications/MATLAB_R2022b.app/bin:$PATH
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
 export PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH
