@@ -25,12 +25,13 @@ alias git-info='tokei . & onefetch --show-logo never'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock' # MacOS only
 alias rstudio='open -a rstudio'                                                         # MacOS only
 alias size='du -shc * | grep total'
-alias sysupdate='speedtest -P 8 && brew update && brew upgrade && brew cleanup && neofetch && brew bundle dump --force --file=~/dotfiles/brew/pkgs'
+alias sysupdate='brew update && brew upgrade && brew cleanup && neofetch && brew bundle dump --force --file=~/dotfiles/brew/pkgs'
 alias vi='hx'
 alias work-time='cd ~/Library/CloudStorage/GoogleDrive-carlos.lezama@rappi.com/My\ Drive'
 
 lazygit() {
     git status .
+    git rm -r --cached .
     git add -A
     git commit -m "$@"
     git push
