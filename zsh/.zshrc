@@ -1,12 +1,12 @@
 # export PATH=$HOME/.cargo/bin:$PATH
+# export PATH=/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
+# export PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH
+# export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
-export PATH=/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
-export PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
-export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
 export ZSH=~/.oh-my-zsh
 export NVM_DIR='$HOME/.nvm'
 [ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'                                       # This loads nvm
@@ -25,7 +25,7 @@ alias git-info='tokei . & onefetch --show-logo never'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock' # MacOS only
 alias rstudio='open -a rstudio'                                                         # MacOS only
 alias size='du -shc * | grep total'
-alias sysupdate='brew update && brew upgrade && brew cleanup && neofetch && brew bundle dump --force --file=~/dotfiles/brew/pkgs'
+alias sysupdate='brew update && brew upgrade && brew cleanup && brew bundle dump --force --file=~/dotfiles/brew/pkgs && neofetch'
 alias vi='hx'
 alias work-time='cd ~/Library/CloudStorage/GoogleDrive-carlos.lezama@rappi.com/My\ Drive'
 
