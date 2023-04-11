@@ -3,6 +3,7 @@
 # export PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH
 # export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
 
+export EDITOR='code -w'
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
@@ -25,9 +26,8 @@ alias git-info='tokei . & onefetch --show-logo never'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock' # MacOS only
 alias rstudio='open -a rstudio'                                                         # MacOS only
 alias size='du -shc * | grep total'
-alias sysupdate='brew update && brew upgrade && brew cleanup && brew bundle dump --force --file=~/dotfiles/brew/pkgs && neofetch'
+alias sysupdate='brew update && brew upgrade && brew cleanup && brew bundle dump --force --file=~/dotfiles/brew/pkgs && source ~/.zshrc && neofetch'
 alias vi='hx'
-alias work-time='cd ~/Library/CloudStorage/GoogleDrive-carlos.lezama@rappi.com/My\ Drive'
 
 lazygit() {
     git status .
