@@ -1,49 +1,41 @@
-# export PATH=$HOME/.cargo/bin:$PATH
-# export PATH=/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
-# export PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH
-# export PKG_CONFIG_PATH=/opt/homebrew/opt/ruby/lib/pkgconfig
+zstyle ':omz:update' mode auto
 
 export EDITOR='code -w'
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export PATH=/Applications/MATLAB_R2023a.app/bin:$PATH
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export ZSH=~/.oh-my-zsh
+
 export NVM_DIR='$HOME/.nvm'
 [ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'                                       # This loads nvm
 [ -s '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' ] && \. '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' # This loads nvm bash_completion
 
 ZSH_THEME='lezama'
 
+plugins=(
+    aliases
+    git
+    macos
+    python
+    qrcode
+    vscode
+)
+
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cat='bat --theme=ansi'
-alias config-vi='vi ~/.config/helix/config.toml'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
-alias git-info='tokei . & onefetch --show-logo never'
-alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock' # MacOS only
-alias rstudio='open -a rstudio'                                                         # MacOS only
+alias mtlb='matlab -nodesktop -nosplash'
+alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias size='du -shc * | grep total'
-alias sysupdate='brew update && brew upgrade && brew cleanup && brew bundle dump --force --file=~/dotfiles/brew/pkgs && source ~/.zshrc && neofetch'
+alias sysupdate='brew update && brew upgrade && brew cleanup && brew bundle dump --force --file=~/dotfiles/brew/pkgs && unalias -m "*" && source ~/.zshrc'
 alias vi='hx'
-
-lazygit() {
-    git status .
-    git rm -r --cached .
-    git add -A
-    git commit -m "$@"
-    git push
-}
-
-update-git() {
-    git status .
-    git rm -r --cached .
-    git add -A
-    git commit -m 'Update'
-    git push
-}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
