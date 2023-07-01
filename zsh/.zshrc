@@ -29,6 +29,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cat='bat --theme=ansi'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
+alias l='ls -a'
 alias mtlb='matlab -nodesktop -nosplash'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias size='du -shc * | grep total'
@@ -50,6 +51,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-fpath+="$(brew --prefix)/share/zsh/site-functions"
-autoload -U promptinit; promptinit
-prompt pure
+source /opt/homebrew/opt/spaceship/spaceship.zsh
