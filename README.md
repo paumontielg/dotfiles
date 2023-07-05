@@ -36,5 +36,5 @@ ln -s ~/dotfiles/helix/config.toml ~/.config/helix/config.toml
 ```shell
 rm ~/.zshrc
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/.spaceshiprc.zsh ~/.spaceshiprc.zsh
+ln -s ~/dotfiles/zsh/lezama.zsh-theme ~/.oh-my-zsh/themes/lezama.zsh-theme
 ```
