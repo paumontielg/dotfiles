@@ -43,7 +43,7 @@ nd() {
         cd -P -- "$1"
 }
 
-sys-update() {
+function sysupdate() {
     if [[ $(scutil --get LocalHostName) == $MACHINE ]]; then
         echo "Updating brew packages..."
         brew update
@@ -53,24 +53,12 @@ sys-update() {
         brew bundle dump --force --file=$BREW_FILE
         echo "Cleaning up brew packages..."
         brew bundle cleanup --force --file=$BREW_FILE
-        echo "Pushing changes to github..."
-        cd ~/dotfiles
-        git add .
-        if [ "$1" != "" ]; then
-            git commit -m "$1"
-        else
-            git commit -m update
-        fi
-        git push
         echo "Removing previous aliases..."
         unalias -m "*"
         echo "Reloading zsh..."
         source ~/.zshrc
-        echo "Done!"
+        echo "System updated!"
     else
-        echo "Pulling changes from github..."
-        cd ~/dotfiles
-        git pull --rebase
         echo "Updating brew packages..."
         brew update
         echo "Upgrading brew packages..."
@@ -81,20 +69,14 @@ sys-update() {
         unalias -m "*"
         echo "Reloading zsh..."
         source ~/.zshrc
-        echo "Done!"
+        echo "System updated!"
     fi
 }
 
-sys-sync() {
+function syncsys() {
     if [[ $(scutil --get LocalHostName) == $MACHINE ]]; then
-        echo "Updating brew packages..."
-        brew update
-        echo "Upgrading brew packages..."
-        brew upgrade
-        echo "Updating brew dump file..."
-        brew bundle dump --force --file=$BREW_FILE
-        echo "Cleaning up brew packages..."
-        brew bundle cleanup --force --file=$BREW_FILE
+        echo "Updating system..."
+        sysupdate
         echo "Pushing changes to github..."
         cd ~/dotfiles
         git add .
@@ -104,26 +86,15 @@ sys-sync() {
             git commit -m update
         fi
         git push
-        echo "Removing previous aliases..."
-        unalias -m "*"
-        echo "Reloading zsh..."
-        source ~/.zshrc
-        echo "Done!"
     else
+        if [ "$1" != "" ]; then
+            echo "You are not on the main machine."
+        fi
         echo "Pulling changes from github..."
         cd ~/dotfiles
         git pull --rebase
-        echo "Updating brew packages..."
-        brew update
-        echo "Upgrading brew packages..."
-        brew upgrade
-        echo "Cleaning up brew packages..."
-        brew bundle cleanup --force --file=$BREW_FILE
-        echo "Removing previous aliases..."
-        unalias -m "*"
-        echo "Reloading zsh..."
-        source ~/.zshrc
-        echo "Done!"
+        echo "Updating system..."
+        sysupdate
     fi
 }
 
