@@ -38,7 +38,7 @@ alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killal
 alias size='du -shc * | grep total'
 alias vi='hx'
 
-nd() {
+function nd() {
     mkdir -p -- "$1" &&
         cd -P -- "$1"
 }
