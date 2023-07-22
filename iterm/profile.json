@@ -1,5 +1,5 @@
 {
-  "Working Directory" : "~\/Desktop",
+  "Working Directory" : "~",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
     "Red Component" : 0.90196079015731812,
@@ -71,7 +71,7 @@
     "Red Component" : 1,
     "Color Space" : "sRGB",
     "Blue Component" : 1,
-    "Alpha Component" : 0.019607843137254902,
+    "Alpha Component" : 0.019607843137254909,
     "Green Component" : 1
   },
   "BM Growl" : true,
@@ -380,11 +380,11 @@
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
   "Tab Color" : {
-    "Red Component" : 0.0039215688593685627,
+    "Red Component" : 0.003921568859368561,
     "Color Space" : "sRGB",
     "Blue Component" : 0.035294119268655777,
     "Alpha Component" : 1,
-    "Green Component" : 0.015686275437474251
+    "Green Component" : 0.015686275437474258
   },
   "Option Key Sends" : 0,
   "Ansi 15 Color" : {
@@ -404,9 +404,9 @@
   "Transparency" : 0,
   "Initial Text" : "",
   "Background Color" : {
-    "Red Component" : 0.054901960784313725,
+    "Red Component" : 0.054901960784313732,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.086274509803921567,
+    "Blue Component" : 0.086274509803921581,
     "Alpha Component" : 1,
     "Green Component" : 0.066666666666666666
   },
