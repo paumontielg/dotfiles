@@ -7,13 +7,14 @@ First, install `brew` and `git`.
 Then, clone this repo into home directory (`~` or `$HOME`).
 
 ```shell
-git clone https://github.com/celj/dotfiles.git ~/dotfiles
+git clone git@github.com:celj/dotfiles.git ~/dotfiles
 ```
 
 ## Packages needed
 
 ```shell
 brew bundle install --all --file=~/dotfiles/brew/pkgs
+brew bundle cleanup --force --file=~/dotfiles/brew/pkgs
 ```
 
 ## Symlink files
