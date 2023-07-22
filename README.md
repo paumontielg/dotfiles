@@ -21,8 +21,10 @@ brew bundle install --all --file=~/dotfiles/brew/pkgs
 ### git
 
 ```shell
+ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/git/.gitconfig-personal ~/.gitconfig-personal
+ln -s ~/dotfiles/git/.gitconfig-work ~/.gitconfig-work
 ln -s ~/dotfiles/git/.gitignore ~/.gitignore
-git config --global core.excludesfile ~/.gitignore
 ```
 
 ### helix
