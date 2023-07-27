@@ -33,7 +33,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cat='bat --theme=ansi'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
-alias mtlb='matlab -nodesktop -nosplash'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias size='du -shc * | grep total'
 alias vi='hx'
