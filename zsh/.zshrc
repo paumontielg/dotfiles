@@ -56,6 +56,8 @@ function sysupdate() {
         unalias -m "*"
         echo "Reloading zsh..."
         source ~/.zshrc
+        echo "Reloading launchpad ..."
+        new-app
         echo "System updated!"
     else
         echo "Updating brew packages..."
@@ -68,6 +70,8 @@ function sysupdate() {
         unalias -m "*"
         echo "Reloading zsh..."
         source ~/.zshrc
+        echo "Reloading launchpad ..."
+        new-app
         echo "System updated!"
     fi
 }
