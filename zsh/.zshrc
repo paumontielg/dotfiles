@@ -1,7 +1,7 @@
 zstyle ':omz:update' mode auto
 
 export BREW_FILE=~/dotfiles/brew/pkgs
-export EDITOR='code -w'
+export EDITOR=hx
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export MACHINE=mac-n-cheese
