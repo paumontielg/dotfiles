@@ -1,12 +1,13 @@
 zstyle ':omz:update' mode auto
 
 export BREW_FILE=~/dotfiles/brew/pkgs
-export EDITOR=hx
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export MACHINE=mac-n-cheese
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PATH=/Applications/MATLAB_R2023a.app/bin:$PATH
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
+export PATH=/opt/homebrew/opt/postgresql@15/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/.local/bin:$PATH
@@ -37,9 +38,26 @@ alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killal
 alias size='du -shc * | grep total'
 alias vi='hx'
 
+function csw() {
+    conda deactivate &&
+    conda activate "$1"
+}
+
 function nd() {
     mkdir -p -- "$1" &&
         cd -P -- "$1"
+}
+
+function py-dev() {
+    export AWS_PROFILE=development;
+    export EXECUTION_ENVIRONMENT=development;
+    python $1
+}
+
+function py-prod() {
+    export AWS_PROFILE=production;
+    export EXECUTION_ENVIRONMENT=production;
+    python $1
 }
 
 function sysupdate() {
