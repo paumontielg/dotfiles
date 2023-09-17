@@ -7,7 +7,7 @@ First, install `brew` and `git`.
 Then, clone this repo into home directory (`~` or `$HOME`).
 
 ```shell
-git clone git@github.com:celj/dotfiles.git ~/dotfiles
+git clone https://github.com/celj/dotfiles.git ~/dotfiles
 ```
 
 ## Packages needed
@@ -22,22 +22,25 @@ brew bundle cleanup --force --file=~/dotfiles/brew/pkgs
 ### git
 
 ```shell
-ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/git/.gitconfig-personal ~/.gitconfig-personal
-ln -s ~/dotfiles/git/.gitconfig-work ~/.gitconfig-work
-ln -s ~/dotfiles/git/.gitignore ~/.gitignore
+ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/git/.gitconfig-personal ~/.gitconfig-personal
+ln -sf ~/dotfiles/git/.gitconfig-work ~/.gitconfig-work
+ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
 ```
 
-### helix
+### neovim
 
 ```shell
-ln -s ~/dotfiles/helix/config.toml ~/.config/helix/config.toml
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+mkdir -p ~/.config/nvim/lua/custom
+rm -rf ~/.config/nvim/lua/custom
+ln -sf ~/dotfiles/nvim/custom ~/.config/nvim/lua
 ```
 
 ### zsh
 
 ```shell
 rm ~/.zshrc
-ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/lezama.zsh-theme ~/.oh-my-zsh/themes/lezama.zsh-theme
+ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/zsh/lezama.zsh-theme ~/.oh-my-zsh/themes/lezama.zsh-theme
 ```

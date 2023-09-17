@@ -1,11 +1,16 @@
 zstyle ':omz:update' mode auto
 
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+
+autoload -U promptinit
+promptinit
+prompt pure
+
 export BREW_FILE=~/dotfiles/brew/pkgs
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export MACHINE=mac-n-cheese
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export PATH=/Applications/MATLAB_R2023a.app/bin:$PATH
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=/opt/homebrew/opt/postgresql@15/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
@@ -16,8 +21,6 @@ export ZSH=~/.oh-my-zsh
 export NVM_DIR='$HOME/.nvm'
 [ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'
 [ -s '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' ] && \. '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm'
-
-ZSH_THEME='lezama'
 
 plugins=(
     aliases
@@ -34,13 +37,20 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cat='bat --theme=ansi'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
+alias ls='exa'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias size='du -shc * | grep total'
-alias vi='hx'
+alias tree='exa --tree'
+alias vi='nvim'
 
 function csw() {
     conda deactivate &&
     conda activate "$1"
+}
+
+function fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 function nd() {
