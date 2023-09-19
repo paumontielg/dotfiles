@@ -32,9 +32,17 @@ ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
 
 ```shell
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+rm -rf ~/.config/nvim/lua/custom
 mkdir -p ~/.config/nvim/lua/custom
 rm -rf ~/.config/nvim/lua/custom
 ln -sf ~/dotfiles/nvim/custom ~/.config/nvim/lua
+```
+
+### warp
+
+```shell
+mkdir -p ~/.warp/themes
+ln -sf ~/dotfiles/warp/rose-pine.yaml ~/.warp/themes/rose-pine.yaml
 ```
 
 ### zsh
