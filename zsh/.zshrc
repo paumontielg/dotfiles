@@ -40,11 +40,24 @@ alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
 alias ls='exa'
 alias nb='jupyter notebook'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
-alias propagate='gp; gco stage; gm main; gp; gco prod; gm main; gp; gco main;'
 alias randpw='openssl rand -base64 12 | pbcopy'
 alias size='du -shc * | grep total'
 alias tree='exa --tree'
 alias vi='nvim'
+
+function cnew() {
+    export LATEST_VERSION=$(conda search python | grep -Eo '(\d+)\.(\d+)\.(\d+)' | tail -1) &&
+    conda create -n "$1" python="$LATEST_VERSION" -y &&
+    unset LATEST_VERSION &&
+    conda deactivate &&
+    conda activate "$1"
+}
+
+function crm() {
+    conda deactivate &&
+    conda env remove -n "$1" -y &&
+    conda activate base
+}
 
 function csw() {
     conda deactivate &&
