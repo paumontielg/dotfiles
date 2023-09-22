@@ -1,12 +1,18 @@
 # My dotfiles
 
-> OS: macOS Ventura 13.1
+> OS: macOS Ventura
 
 First, install `brew` and `git`.
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git
+```
 
 Then, clone this repo into home directory (`~` or `$HOME`).
 
 ```shell
+cd ~
 git clone https://github.com/celj/dotfiles.git ~/dotfiles
 ```
 
@@ -34,7 +40,6 @@ ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 rm -rf ~/.config/nvim/lua/custom
 mkdir -p ~/.config/nvim/lua/custom
-rm -rf ~/.config/nvim/lua/custom
 ln -sf ~/dotfiles/nvim/custom ~/.config/nvim/lua
 ```
 
