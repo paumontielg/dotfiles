@@ -1,10 +1,6 @@
 zstyle ':omz:update' mode auto
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-
-autoload -U promptinit
-promptinit
-prompt pure
+eval $(thefuck --alias)
 
 export BREW_FILE=~/dotfiles/brew/pkgs
 export LANG=en_US.UTF-8
@@ -27,8 +23,6 @@ plugins=(
     git
     macos
     python
-    qrcode
-    vscode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -36,7 +30,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cat='bat --theme=ansi'
+alias cel='conda env list'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
+alias gd='ydiff -s -p cat'
 alias ls='exa'
 alias nb='jupyter notebook'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
