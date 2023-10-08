@@ -14,6 +14,7 @@ local sources = {
 	b.formatting.black.with({ extra_args = { "--quiet" } }),
 	b.formatting.deno_fmt,
 	b.formatting.latexindent,
+  b.formatting.rustfmt,
 	b.formatting.shfmt,
 	b.formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
 	b.formatting.stylua,

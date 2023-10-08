@@ -57,6 +57,7 @@ M.mason = {
 		"prettier",
 		"pyright",
 		"rust-analyzer",
+    "rustfmt",
     "shfmt",
 		"sqlfluff",
 		"sqlls",
