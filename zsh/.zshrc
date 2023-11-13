@@ -40,7 +40,7 @@ alias pip-reqs='pip freeze --exclude-editable > requirements.txt'
 alias randpw='openssl rand -base64 12 | pbcopy'
 alias size='du -shc * | grep total'
 alias tree='exa --tree'
-alias vi='nvim'
+alias vi='hx'
 
 function cnew() {
     export LATEST_VERSION=$(conda search python | grep -Eo '(\d+)\.(\d+)\.(\d+)' | tail -1) &&

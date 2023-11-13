@@ -1,0 +1,24 @@
+theme = "rose_pine"
+
+[editor]
+auto-save = true
+bufferline = "multiple"
+color-modes = true
+line-number = "absolute"
+lsp.display-inlay-hints = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+center = ["spinner"]
+left = ["mode", "file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.indent-guides]
+render = true

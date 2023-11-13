@@ -34,13 +34,11 @@ ln -sf ~/dotfiles/git/.gitconfig-work ~/.gitconfig-work
 ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
 ```
 
-### neovim
+### helix
 
 ```shell
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-rm -rf ~/.config/nvim/lua/custom
-mkdir -p ~/.config/nvim/lua/custom
-ln -sf ~/dotfiles/nvim/custom ~/.config/nvim/lua
+mkdir -p ~/.config/helix
+ln -sf ~/dotfiles/helix/* ~/.config/helix/
 ```
 
 ### warp
