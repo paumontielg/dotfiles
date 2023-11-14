@@ -6,6 +6,8 @@ bufferline = "multiple"
 color-modes = true
 line-number = "absolute"
 lsp.display-inlay-hints = false
+rulers = [80, 120]
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -22,3 +24,6 @@ right = ["diagnostics", "selections", "position", "file-encoding", "file-line-en
 
 [editor.indent-guides]
 render = true
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
