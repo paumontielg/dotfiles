@@ -15,9 +15,15 @@ r = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
 tailwindcss-ls = { command = "tailwindcss-language-server", args = ["--stdio"] }
 terraform-ls = { command = "terraform-ls", args = ["serve"] }
 texlab = { command = "texlab" }
-vscode-css-language-server = { command = "vscode-css-language-server", args = ["--stdio"], config = { provideFormatter = true, css = { validate = { enable = true } } } }
-vscode-html-language-server = { command = "vscode-html-language-server", args = ["--stdio"], config = { provideFormatter = true } }
-vscode-json-language-server = { command = "vscode-json-language-server", args = ["--stdio"], config = { provideFormatter = true, json = { validate = { enable = true } } } }
+vscode-css-language-server = { command = "vscode-css-language-server", args = [
+  "--stdio",
+], config = { provideFormatter = true, css = { validate = { enable = true } } } }
+vscode-html-language-server = { command = "vscode-html-language-server", args = [
+  "--stdio",
+], config = { provideFormatter = true } }
+vscode-json-language-server = { command = "vscode-json-language-server", args = [
+  "--stdio",
+], config = { provideFormatter = true, json = { validate = { enable = true } } } }
 yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
 
 [language-server.rust-analyzer]
@@ -62,7 +68,7 @@ file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "rust-analyzer" ]
+language-servers = ["rust-analyzer"]
 indent = { tab-width = 4, unit = "    " }
 
 [language.auto-pairs]
@@ -80,26 +86,35 @@ command = "lldb-vscode"
 [[language.debugger.templates]]
 name = "binary"
 request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
+completion = [{ name = "binary", completion = "filename" }]
 args = { program = "{0}" }
 
 [[language.debugger.templates]]
 name = "binary (terminal)"
 request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
+completion = [{ name = "binary", completion = "filename" }]
 args = { program = "{0}", runInTerminal = true }
 
 [[language.debugger.templates]]
 name = "attach"
 request = "attach"
-completion = [ "pid" ]
+completion = ["pid"]
 args = { pid = "{0}" }
 
 [[language.debugger.templates]]
 name = "gdbserver attach"
 request = "attach"
-completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
-args = { attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
+completion = [
+  { name = "lldb connect url", default = "connect://localhost:3333" },
+  { name = "file", completion = "filename" },
+  "pid",
+]
+args = { attachCommands = [
+  "platform select remote-gdb-server",
+  "platform connect {0}",
+  "file {1}",
+  "attach {2}",
+] }
 
 [[grammar]]
 name = "rust"
@@ -112,7 +127,7 @@ injection-regex = "toml"
 file-types = ["toml", "poetry.lock", "Cargo.lock"]
 roots = []
 comment-token = "#"
-language-servers = [ "taplo" ]
+language-servers = ["taplo"]
 indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -142,10 +157,10 @@ file-types = [
   "jsonld",
   ".vuerc",
   "composer.lock",
-  ".watchmanconfig"
+  ".watchmanconfig",
 ]
 roots = []
-language-servers = [ "vscode-json-language-server" ]
+language-servers = ["vscode-json-language-server"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
@@ -173,10 +188,10 @@ source = { git = "https://github.com/Joakker/tree-sitter-json5", rev = "c23f7a9b
 name = "c"
 scope = "source.c"
 injection-regex = "c"
-file-types = ["c"] # TODO: ["h"]
+file-types = ["c"]                      # TODO: ["h"]
 roots = []
 comment-token = "//"
-language-servers = [ "clangd" ]
+language-servers = ["clangd"]
 indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]
@@ -187,20 +202,29 @@ command = "lldb-vscode"
 [[language.debugger.templates]]
 name = "binary"
 request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
+completion = [{ name = "binary", completion = "filename" }]
 args = { console = "internalConsole", program = "{0}" }
 
 [[language.debugger.templates]]
 name = "attach"
 request = "attach"
-completion = [ "pid" ]
+completion = ["pid"]
 args = { console = "internalConsole", pid = "{0}" }
 
 [[language.debugger.templates]]
 name = "gdbserver attach"
 request = "attach"
-completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
-args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
+completion = [
+  { name = "lldb connect url", default = "connect://localhost:3333" },
+  { name = "file", completion = "filename" },
+  "pid",
+]
+args = { console = "internalConsole", attachCommands = [
+  "platform select remote-gdb-server",
+  "platform connect {0}",
+  "file {1}",
+  "attach {2}",
+] }
 
 [[grammar]]
 name = "c"
@@ -210,10 +234,34 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-c", rev = "7175a6dd
 name = "cpp"
 scope = "source.cpp"
 injection-regex = "cpp"
-file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", { suffix = ".hpp.in" }, { suffix = ".h.in" }]
+file-types = [
+  "cc",
+  "hh",
+  "c++",
+  "cpp",
+  "hpp",
+  "h",
+  "ipp",
+  "tpp",
+  "cxx",
+  "hxx",
+  "ixx",
+  "txx",
+  "ino",
+  "C",
+  "H",
+  "cu",
+  "cuh",
+  "cppm",
+  "h++",
+  "ii",
+  "inl",
+  { suffix = ".hpp.in" },
+  { suffix = ".h.in" },
+]
 roots = []
 comment-token = "//"
-language-servers = [ "clangd" ]
+language-servers = ["clangd"]
 indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]
@@ -224,20 +272,29 @@ command = "lldb-vscode"
 [[language.debugger.templates]]
 name = "binary"
 request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
+completion = [{ name = "binary", completion = "filename" }]
 args = { console = "internalConsole", program = "{0}" }
 
 [[language.debugger.templates]]
 name = "attach"
 request = "attach"
-completion = [ "pid" ]
+completion = ["pid"]
 args = { console = "internalConsole", pid = "{0}" }
 
 [[language.debugger.templates]]
 name = "gdbserver attach"
 request = "attach"
-completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
-args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
+completion = [
+  { name = "lldb connect url", default = "connect://localhost:3333" },
+  { name = "file", completion = "filename" },
+  "pid",
+]
+args = { console = "internalConsole", attachCommands = [
+  "platform select remote-gdb-server",
+  "platform connect {0}",
+  "file {1}",
+  "attach {2}",
+] }
 
 [[grammar]]
 name = "cpp"
@@ -251,25 +308,25 @@ file-types = ["cs", "csx", "cake"]
 roots = ["sln", "csproj"]
 comment-token = "//"
 indent = { tab-width = 4, unit = "\t" }
-language-servers = [ "omnisharp" ]
+language-servers = ["omnisharp"]
 
 [language.debugger]
 name = "netcoredbg"
 transport = "tcp"
 command = "netcoredbg"
-args = [ "--interpreter=vscode" ]
+args = ["--interpreter=vscode"]
 port-arg = "--server={}"
 
 [[language.debugger.templates]]
 name = "launch"
 request = "launch"
-completion = [ { name = "path to dll", completion = "filename" } ]
+completion = [{ name = "path to dll", completion = "filename" }]
 args = { type = "coreclr", console = "internalConsole", internalConsoleOptions = "openOnSessionStart", program = "{0}" }
 
 [[language.debugger.templates]]
 name = "attach"
 request = "attach"
-completion = [ "pid" ]
+completion = ["pid"]
 args = { processId = "{0}" }
 
 [[grammar]]
@@ -285,7 +342,7 @@ file-types = ["js", "mjs", "cjs", "rules", "es6", "pac", "jakefile"]
 shebangs = ["node"]
 roots = []
 comment-token = "//"
-language-servers = [ "typescript-language-server" ]
+language-servers = ["typescript-language-server"]
 indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]
@@ -297,7 +354,7 @@ quirks = { absolute-paths = true }
 [[language.debugger.templates]]
 name = "source"
 request = "launch"
-completion = [ { name = "main", completion = "filename", default = "index.js" } ]
+completion = [{ name = "main", completion = "filename", default = "index.js" }]
 args = { program = "{0}" }
 
 [[grammar]]
@@ -312,7 +369,7 @@ language-id = "javascriptreact"
 file-types = ["jsx"]
 roots = []
 comment-token = "//"
-language-servers = [ "typescript-language-server" ]
+language-servers = ["typescript-language-server"]
 indent = { tab-width = 2, unit = "  " }
 grammar = "javascript"
 
@@ -324,7 +381,7 @@ file-types = ["ts", "mts", "cts"]
 language-id = "typescript"
 shebangs = ["deno", "ts-node"]
 roots = []
-language-servers = [ "typescript-language-server" ]
+language-servers = ["typescript-language-server"]
 indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -334,11 +391,11 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-typescript", rev = 
 [[language]]
 name = "tsx"
 scope = "source.tsx"
-injection-regex = "(tsx)" # |typescript
+injection-regex = "(tsx)"                         # |typescript
 language-id = "typescriptreact"
 file-types = ["tsx"]
 roots = []
-language-servers = [ "typescript-language-server" ]
+language-servers = ["typescript-language-server"]
 indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -351,7 +408,7 @@ scope = "source.css"
 injection-regex = "css"
 file-types = ["css", "scss"]
 roots = []
-language-servers = [ "vscode-css-language-server" ]
+language-servers = ["vscode-css-language-server"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
@@ -365,7 +422,7 @@ scope = "source.scss"
 injection-regex = "scss"
 file-types = ["scss"]
 roots = []
-language-servers = [ "vscode-css-language-server" ]
+language-servers = ["vscode-css-language-server"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
@@ -377,9 +434,21 @@ source = { git = "https://github.com/serenadeai/tree-sitter-scss", rev = "c478c6
 name = "html"
 scope = "text.html.basic"
 injection-regex = "html"
-file-types = ["html", "htm", "shtml", "xhtml", "xht", "jsp", "asp", "aspx", "jshtm", "volt", "rhtml"]
+file-types = [
+  "html",
+  "htm",
+  "shtml",
+  "xhtml",
+  "xht",
+  "jsp",
+  "asp",
+  "aspx",
+  "jshtm",
+  "volt",
+  "rhtml",
+]
 roots = []
-language-servers = [ "vscode-html-language-server" ]
+language-servers = ["vscode-html-language-server"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
@@ -391,17 +460,31 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-html", rev = "29f53
 name = "python"
 scope = "source.python"
 injection-regex = "python"
-file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
+file-types = [
+  "py",
+  "pyi",
+  "py3",
+  "pyw",
+  "ptl",
+  ".pythonstartup",
+  ".pythonrc",
+  "SConstruct",
+  "rpy",
+  "cpy",
+  "ipy",
+  "pyt",
+  "SConscript",
+]
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 comment-token = "#"
-language-servers = [ "pylsp" ]
+language-servers = ["pylsp"]
 # TODO: pyls needs utf-8 offsets
 indent = { tab-width = 4, unit = "    " }
 
 [language.formatter]
 args = [
-  "-", # stdin
+  "-",                # stdin
   "--quiet",
   "--line-length=79",
 ]
@@ -454,12 +537,12 @@ file-types = [
   ".yash_profile",
   ".hushlogin",
   "bashrc_Apple_Terminal",
-  "zshrc_Apple_Terminal"
+  "zshrc_Apple_Terminal",
 ]
 shebangs = ["sh", "bash", "dash", "zsh"]
 roots = []
 comment-token = "#"
-language-servers = [ "bash-language-server" ]
+language-servers = ["bash-language-server"]
 indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -473,7 +556,7 @@ injection-regex = "tex"
 file-types = ["tex", "sty", "cls", "Rd", "bbx", "cbx"]
 roots = []
 comment-token = "%"
-language-servers = [ "texlab" ]
+language-servers = ["texlab"]
 indent = { tab-width = 4, unit = "\t" }
 
 [[grammar]]
@@ -487,7 +570,7 @@ injection-regex = "bib"
 file-types = ["bib"]
 roots = []
 comment-token = "%"
-language-servers = [ "texlab" ]
+language-servers = ["texlab"]
 indent = { tab-width = 4, unit = "\t" }
 auto-format = true
 
@@ -515,8 +598,9 @@ file-types = ["yml", "yaml"]
 roots = []
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "yaml-language-server", "ansible-language-server" ]
+language-servers = ["yaml-language-server", "ansible-language-server"]
 injection-regex = "yml|yaml"
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
 
 [[grammar]]
 name = "yaml"
@@ -529,7 +613,7 @@ file-types = ["cmake", "CMakeLists.txt"]
 roots = []
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "cmake-language-server" ]
+language-servers = ["cmake-language-server"]
 injection-regex = "cmake"
 
 [[grammar]]
@@ -539,7 +623,15 @@ source = { git = "https://github.com/uyha/tree-sitter-cmake", rev = "6e51463ef30
 [[language]]
 name = "make"
 scope = "source.make"
-file-types = ["Makefile", "makefile", "make", "mk", "mak", "GNUmakefile", "OCamlMakefile"]
+file-types = [
+  "Makefile",
+  "makefile",
+  "make",
+  "mk",
+  "mak",
+  "GNUmakefile",
+  "OCamlMakefile",
+]
 shebangs = ["make", "gmake"]
 injection-regex = "(make|makefile|Makefile|mk)"
 roots = []
@@ -565,9 +657,20 @@ source = { git = "https://github.com/stsewd/tree-sitter-comment", rev = "5dd3c62
 name = "markdown"
 scope = "source.md"
 injection-regex = "md|markdown"
-file-types = ["md", "markdown", "PULLREQ_EDITMSG", "mkd", "mdwn", "mdown", "markdn", "mdtxt", "mdtext", "workbook"]
+file-types = [
+  "md",
+  "markdown",
+  "PULLREQ_EDITMSG",
+  "mkd",
+  "mdwn",
+  "mdown",
+  "markdn",
+  "mdtxt",
+  "mdtext",
+  "workbook",
+]
 roots = [".marksman.toml"]
-language-servers = [ "marksman" ]
+language-servers = ["marksman"]
 indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -594,7 +697,7 @@ roots = ["Dockerfile", "Containerfile"]
 file-types = ["Dockerfile", "dockerfile", "Containerfile", "containerfile"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "docker-langserver" ]
+language-servers = ["docker-langserver"]
 
 [[grammar]]
 name = "dockerfile"
@@ -655,7 +758,12 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-regex", rev = "e1cf
 name = "git-config"
 scope = "source.gitconfig"
 roots = []
-file-types = [".gitmodules", ".gitconfig", { suffix = ".git/config" }, { suffix = ".config/git/config" }]
+file-types = [
+  ".gitmodules",
+  ".gitconfig",
+  { suffix = ".git/config" },
+  { suffix = ".config/git/config" },
+]
 injection-regex = "git-config"
 comment-token = "#"
 indent = { tab-width = 4, unit = "\t" }
@@ -681,7 +789,15 @@ source = { git = "https://github.com/mtoohey31/tree-sitter-gitattributes", rev =
 name = "git-ignore"
 scope = "source.gitignore"
 roots = []
-file-types = [".gitignore", ".gitignore_global", ".ignore", ".prettierignore", ".eslintignore", ".npmignore", "CODEOWNERS"]
+file-types = [
+  ".gitignore",
+  ".gitignore_global",
+  ".ignore",
+  ".prettierignore",
+  ".eslintignore",
+  ".npmignore",
+  "CODEOWNERS",
+]
 injection-regex = "git-ignore"
 comment-token = "#"
 grammar = "gitignore"
@@ -699,7 +815,7 @@ shebangs = ["r", "R"]
 roots = []
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "r" ]
+language-servers = ["r"]
 
 [[grammar]]
 name = "r"
@@ -713,7 +829,7 @@ file-types = ["rmd", "Rmd"]
 roots = []
 indent = { tab-width = 2, unit = "  " }
 grammar = "markdown"
-language-servers = [ "r" ]
+language-servers = ["r"]
 
 [[language]]
 name = "sql"
@@ -797,7 +913,7 @@ file-types = [
   "xliff",
   "xpdl",
   "xul",
-  "xoml"
+  "xoml",
 ]
 indent = { tab-width = 2, unit = "  " }
 roots = []
@@ -818,7 +934,14 @@ source = { git = "https://github.com/RenjiSann/tree-sitter-xml", rev = "48a7c2b6
 [[language]]
 name = "env"
 scope = "source.env"
-file-types = [".env", ".env.local", ".env.development", ".env.production", ".env.dist", ".envrc"]
+file-types = [
+  ".env",
+  ".env.local",
+  ".env.development",
+  ".env.production",
+  ".env.dist",
+  ".envrc",
+]
 injection-regex = "env"
 comment-token = "#"
 indent = { tab-width = 4, unit = "\t" }
@@ -864,7 +987,7 @@ name = "markdoc"
 scope = "text.markdoc"
 roots = []
 file-types = ["mdoc"]
-language-servers = [ "markdoc-ls" ]
+language-servers = ["markdoc-ls"]
 
 [[grammar]]
 name = "markdoc"
@@ -894,3 +1017,30 @@ auto-format = true
 [[grammar]]
 name = "todotxt"
 source = { git = "https://github.com/arnarg/tree-sitter-todotxt", rev = "0207f6a4ab6aeafc4b091914d31d8235049a2578" }
+
+[[language]]
+name = "hcl"
+scope = "source.hcl"
+injection-regex = "(hcl|tf|nomad)"
+language-id = "terraform"
+file-types = ["hcl", "tf", "nomad"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["terraform-ls"]
+auto-format = true
+formatter = { command = "terraform fmt" }
+
+[[grammar]]
+name = "hcl"
+source = { git = "https://github.com/MichaHoffmann/tree-sitter-hcl", rev = "3cb7fc28247efbcb2973b97e71c78838ad98a583" }
+
+[[language]]
+name = "tfvars"
+scope = "source.tfvars"
+language-id = "terraform-vars"
+file-types = ["tfvars"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["terraform-ls"]
+auto-format = true
+grammar = "hcl"
