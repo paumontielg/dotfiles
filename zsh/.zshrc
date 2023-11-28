@@ -1,5 +1,6 @@
 zstyle ':omz:update' mode auto
 
+eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 eval $(thefuck --alias)
 
 export BREW_FILE=~/dotfiles/brew/pkgs
@@ -7,9 +8,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export MACHINE=mac-n-cheese
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=/opt/homebrew/opt/postgresql@15/bin:$PATH
-export PATH=/usr/local/anaconda3/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export ZSH=~/.oh-my-zsh
@@ -32,7 +31,10 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias cat='bat --theme=ansi'
 alias cel='conda env list'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
+alias dotfiles='vi ~/dotfiles'
 alias gd='ydiff -s -p cat'
+alias gignored='git ls-files . --ignored --exclude-standard --others'
+alias guntracked='git ls-files . --exclude-standard --others'
 alias ls='exa'
 alias nb='jupyter notebook'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
@@ -43,17 +45,24 @@ alias tree='exa --tree'
 alias vi='hx'
 
 function cnew() {
-    export LATEST_VERSION=$(conda search python | grep -Eo '(\d+)\.(\d+)\.(\d+)' | tail -1) &&
-    conda create -n "$1" python="$LATEST_VERSION" -y &&
-    unset LATEST_VERSION &&
+    conda create -n "$1" python="$2" -y &&
     conda deactivate &&
     conda activate "$1"
 }
 
 function crm() {
     conda deactivate &&
+    conda activate base &&
+    conda env remove -n "$1" -y
+}
+
+function crp() {
+    conda deactivate &&
+    conda activate base &&
     conda env remove -n "$1" -y &&
-    conda activate base
+    conda create -n "$1" python="$2" -y &&
+    conda deactivate &&
+    conda activate "$1"
 }
 
 function csw() {
@@ -141,15 +150,3 @@ function syncsys() {
         sysupdate
     fi
 }
-
-__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
