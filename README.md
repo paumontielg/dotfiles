@@ -28,10 +28,7 @@ brew bundle cleanup --force --file=~/dotfiles/brew/pkgs
 ### git
 
 ```shell
-ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/git/.gitconfig-personal ~/.gitconfig-personal
-ln -sf ~/dotfiles/git/.gitconfig-work ~/.gitconfig-work
-ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
+ln -sf ~/dotfiles/git/* ~/
 ```
 
 ### helix
@@ -51,7 +48,7 @@ ln -sf ~/dotfiles/warp/rose-pine.yaml ~/.warp/themes/rose-pine.yaml
 ### zsh
 
 ```shell
-rm ~/.zshrc
+rm -f ~/.zshrc
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/zsh/lezama.zsh-theme ~/.oh-my-zsh/themes/lezama.zsh-theme
 ```

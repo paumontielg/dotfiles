@@ -1,10 +1,10 @@
 [core]
 excludesfile = /Users/carlos/.gitignore
 
-[includeIf "gitdir:~/Desktop/"]
+[includeIf "gitdir:~/Documents/work/"]
 path = ~/.gitconfig-work
 
-[includeIf "gitdir:~/Documents/"]
+[includeIf "gitdir:~/Documents/personal/"]
 path = ~/.gitconfig-personal
 
 [includeIf "gitdir:~/dotfiles/"]

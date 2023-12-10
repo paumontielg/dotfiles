@@ -1,21 +1,28 @@
+export MACHINE=mac-n-cheese
+
 zstyle ':omz:update' mode auto
 
 eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 eval $(thefuck --alias)
 
 export BREW_FILE=~/dotfiles/brew/pkgs
+export CPPFLAGS=-I/opt/homebrew/opt/openssl/include
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export MACHINE=mac-n-cheese
+export LDFLAGS=-L/opt/homebrew/opt/openssl/lib
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PATH=/opt/homebrew/opt/postgresql@15/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 export PATH=~/.local/bin:$PATH
+export PKG_CONFIG_PATH=/opt/homebrew/opt/openssl/lib/pkgconfig
 export ZSH=~/.oh-my-zsh
 
 export NVM_DIR='$HOME/.nvm'
 [ -s '/opt/homebrew/opt/nvm/nvm.sh' ] && \. '/opt/homebrew/opt/nvm/nvm.sh'
 [ -s '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm' ] && \. '/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm'
+
+ZSH_THEME='lezama'
 
 plugins=(
     aliases
@@ -31,12 +38,13 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias cat='bat --theme=ansi'
 alias cel='conda env list'
 alias config-zsh='vi ~/.zshrc && unalias -m "*" && source ~/.zshrc'
-alias dotfiles='vi ~/dotfiles'
+alias dotfiles='code ~/dotfiles'
 alias gd='ydiff -s -p cat'
 alias gignored='git ls-files . --ignored --exclude-standard --others'
 alias guntracked='git ls-files . --exclude-standard --others'
+alias la='ls -a'
 alias ls='exa'
-alias nb='jupyter notebook'
+alias nb='code'
 alias new-app='defaults write com.apple.dock ResetLaunchPad -bool true && killall Dock'
 alias pip-reqs='pip freeze --exclude-editable > requirements.txt'
 alias randpw='openssl rand -base64 12 | pbcopy'
@@ -46,33 +54,33 @@ alias vi='hx'
 
 function cnew() {
     conda create -n "$1" python="$2" -y &&
-    conda deactivate &&
-    conda activate "$1"
+        conda deactivate &&
+        conda activate "$1"
 }
 
 function crm() {
     conda deactivate &&
-    conda activate base &&
-    conda env remove -n "$1" -y
+        conda activate base &&
+        conda env remove -n "$1" -y
 }
 
 function crp() {
     conda deactivate &&
-    conda activate base &&
-    conda env remove -n "$1" -y &&
-    conda create -n "$1" python="$2" -y &&
-    conda deactivate &&
-    conda activate "$1"
+        conda activate base &&
+        conda env remove -n "$1" -y &&
+        conda create -n "$1" python="$2" -y &&
+        conda deactivate &&
+        conda activate "$1"
 }
 
 function csw() {
     conda deactivate &&
-    conda activate "$1"
+        conda activate "$1"
 }
 
 function fcd() {
-  local dir
-  dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
+    local dir
+    dir=$(find ${1:-.} -type d -not -path '*/\.*' 2>/dev/null | fzf +m) && cd "$dir"
 }
 
 function nd() {
@@ -81,14 +89,14 @@ function nd() {
 }
 
 function py-dev() {
-    export AWS_PROFILE=development;
-    export EXECUTION_ENVIRONMENT=development;
+    export AWS_PROFILE=development
+    export EXECUTION_ENVIRONMENT=development
     python $1
 }
 
 function py-prod() {
-    export AWS_PROFILE=production;
-    export EXECUTION_ENVIRONMENT=production;
+    export AWS_PROFILE=production
+    export EXECUTION_ENVIRONMENT=production
     python $1
 }
 
