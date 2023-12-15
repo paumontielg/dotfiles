@@ -1,4 +1,4 @@
-export MACHINE=mac-n-cheese
+export MACHINE=michi-caguama
 
 zstyle ':omz:update' mode auto
 
