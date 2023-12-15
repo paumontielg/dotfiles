@@ -55,13 +55,15 @@ alias vi='hx'
 function cnew() {
     conda create -n "$1" python="$2" -y &&
         conda deactivate &&
-        conda activate "$1"
+        conda activate "$1" &&
+        conda env list
 }
 
 function crm() {
     conda deactivate &&
         conda activate base &&
-        conda env remove -n "$1" -y
+        conda env remove -n "$1" -y &&
+        conda env list
 }
 
 function crp() {
@@ -70,12 +72,14 @@ function crp() {
         conda env remove -n "$1" -y &&
         conda create -n "$1" python="$2" -y &&
         conda deactivate &&
-        conda activate "$1"
+        conda activate "$1" &&
+        conda env list
 }
 
 function csw() {
     conda deactivate &&
-        conda activate "$1"
+        conda activate "$1" &&
+        conda env list
 }
 
 function fcd() {
